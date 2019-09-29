@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Muli&display=swap');
+body {
+    font-family: 'Muli', sans-serif !important;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.primary-text {
+    color: #761f87 !important
+}
+
+.secondary-text {
+    color: #c455a1 !important
+}
+
+.primary {
+    background: #761f87 !important
+}
+
+.secondary {
+    background: #c455a1 !important
+}
+
+.boton {
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, .45);
+    border-radius: 2em;
+    border: none;
+    color: #fff;
+    padding: 1em 2em;
+    font-weight: 600;
+}

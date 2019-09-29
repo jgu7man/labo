@@ -1,0 +1,52 @@
+.navbar {
+    height: 5em;
+    width: 85%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 20;
+    transition: all .2s
+}
+
+#logoContainer {
+    width: 45%;
+    padding-top: 2em;
+    transition: all .3s ease-out
+}
+
+#logoContainer img {
+    width: 100%;
+}
+
+ul#nav-mobile {
+    display: flex;
+}
+
+ul#nav-mobile li a {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+ul#nav-mobile li a.active {
+    color: #761f87;
+}
+
+ul#nav-mobile li {
+    margin: 15px 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.scrolled {
+    width: 8% !important;
+    padding-top: .4em !important;
+}
+
+.filled {
+    width: 100vw;
+    padding: 0 7.5%;
+    background: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}

@@ -1,0 +1,47 @@
+#hero {
+    background-image: url(../../../../../assets/img/HeroBg.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    padding: 7.5% 7.5% 0;
+}
+
+#titleHero {
+    position: absolute;
+    top: 60vh;
+    max-width: 40%;
+    font-weight: 600;
+}
+
+#btnRegistro {
+    position: relative;
+    top: 60vh;
+}
+
+#laundries {
+    position: relative;
+    right: 5em;
+    top: 5em;
+    width: 80%;
+}
+
+#laundries img {
+    width: 100%;
+}
+
+#user {
+    width: 30%;
+    position: relative;
+    left: 23em;
+    bottom: 2em;
+}
+
+#user img {
+    width: 100%
+}

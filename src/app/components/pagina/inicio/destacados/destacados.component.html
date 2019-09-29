@@ -1,0 +1,27 @@
+<div id="destacados" class="valing-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4 center">
+                <h3 class="white-text"></h3>
+            </div>
+            <div class="col s12 m8 center">
+                <ul class="destacadosList">
+                    <li *ngFor="let lav of lavanderias" class="destacadosItem white">
+                        <div class="center">
+                            <div class="imgPerfil">
+                                <img [src]="lav.perfil" alt="">
+                            </div>
+                        </div>
+                        <div class="secondary-text">
+                            <p><b>{{lav.nombre}}</b></p>
+                            <p>Precio: ${{lav.precio}}°°</p>
+                        </div>
+                        <div class="center">
+                            <button class="boton-small primary white-text">VISITAR</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

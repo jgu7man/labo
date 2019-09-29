@@ -1,0 +1,13 @@
+footer {
+    position: relative;
+    top: 100vh;
+    padding-left: 0;
+}
+
+.imgLogoMono {
+    max-width: 200px;
+}
+
+.imgLogoMono img {
+    width: 100%
+}

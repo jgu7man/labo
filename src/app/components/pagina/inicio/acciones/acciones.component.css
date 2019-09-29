@@ -1,0 +1,59 @@
+#acciones {
+    position: relative;
+    top: 100vh;
+    min-height: 100vh;
+    background: #fff;
+    background-image: url('../../../../../assets/img/AccionesBg.png');
+    background-position: 0 0;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.accion {
+    height: 300px;
+    padding: 5em 0;
+}
+
+.righted .accionNum {
+    position: relative;
+    left: 90%;
+}
+
+.righted .m8 {
+    text-align: right;
+}
+
+.imgContainer img {
+    height: 100%;
+}
+
+.imgContainer {
+    height: 250px;
+    width: auto;
+    position: relative;
+}
+
+@media screen and (min-width: 400px) {
+    .img1 {
+        left: 50%;
+    }
+    .img2 {
+        left: 10%;
+    }
+    .img3 {
+        left: 30%;
+    }
+}
+
+.accionNum {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    width: 75px;
+    height: 75px;
+    transform: rotate(45deg);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.accionNum h3 {
+    transform: rotate(-45deg) translate(-10%, 25%);
+}

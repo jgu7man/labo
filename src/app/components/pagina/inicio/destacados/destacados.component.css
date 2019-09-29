@@ -1,0 +1,56 @@
+#destacados {
+    background-image: url('../../../../../assets/img/DestacadosBg.png');
+    background-color: #c355a1;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 33vh;
+    top: 100vh;
+    position: relative;
+}
+
+.destacadosList {
+    display: flex;
+    position: relative;
+    top: -5em;
+}
+
+.destacadosItem {
+    width: 29.3333333%;
+    margin: 0 2%;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+    padding: 8px;
+    transition: all .3s
+}
+
+.destacadosItem:hover {
+    transform: scale(1.05)
+}
+
+.imgPerfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5)
+}
+
+.imgPerfil img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.boton-small {
+    border: none;
+    border-radius: 1em;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
