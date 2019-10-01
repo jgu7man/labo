@@ -45,3 +45,31 @@
 #user img {
     width: 100%
 }
+
+@media screen and (max-width: 450px) {
+    #hero {
+        background-position: 58% center;
+        background-size: 350% 100%;
+    }
+    #laundries {
+        right: 0em;
+        top: 9em;
+        width: 100%;
+    }
+    #user {
+        width: 60%;
+        position: relative;
+        left: 15%;
+        bottom: -4em;
+    }
+    #titleHero {
+        top: 80vh;
+        max-width: 80%;
+        font-weight: 600;
+        color: #fff !important;
+        font-size: 1.6em;
+    }
+    #btnRegistro {
+        top: 85vh;
+    }
+}

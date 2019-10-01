@@ -100,3 +100,41 @@
 .imgLavanderia img {
     width: 150%;
 }
+
+@media screen and (max-width: 450px) {
+    #info {
+        height: auto;
+    }
+    .tarjetas {
+        flex-direction: column;
+        width: 100%;
+        margin: auto
+    }
+    .face {
+        width: 100%;
+    }
+    .face1,
+    .face2 {
+        transform: translateY(0);
+    }
+    .face2 {
+        margin-bottom: 5em
+    }
+    .face1 .content {
+        opacity: 1;
+    }
+    #info2 {
+        background-size: 600% 70%;
+        background-position: 40% 0;
+    }
+    .legend2 {
+        top: -5em;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .imgLavanderia {
+        top: 0;
+        width: 100vw;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,21 @@
+<div id="formulario">
+    <form action="#" name="mensaje" (ngSubmit)="onSubmit()" #mensajeForm="ngForm" id="mensajeForm" onsubmit="return false" method="post">
+        <div class="row">
+            <p class="formLabel secondary-text">
+                Mándanos un mensaje de WhatsApp
+            </p>
+            <div class="input-field col s12">
+                <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="mensaje.nombre" />
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="col s12 input-field">
+                <textarea name="motivo" id="mensaje " cols="30" rows="10" height="200px" [(ngModel)]="mensaje.mensaje" #Mensaje="ngModel" class="materialize-textarea"></textarea>
+                <label for="motivo">Mensaje</label>
+            </div>
+            <div class="col s12 center">
+                <input class="primary boton" type="submit" name="submit" value="ENVIAR" id="enviar" />
+                <p *ngIf="enviado">Mensaje enviado</p>
+            </div>
+        </div>
+    </form>
+</div>

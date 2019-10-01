@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'pagina',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) {
+    
+   }
 
   ngOnInit() {
-    
+    var ruta = window.location.href.split('/')[3]
+    if (ruta == '') {
+      $(".contenido").addClass('contenidoHome')
+    }
   }
 
 }

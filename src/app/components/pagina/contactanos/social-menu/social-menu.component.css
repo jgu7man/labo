@@ -1,0 +1,87 @@
+#redList {
+    max-width: 350px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.redItem {
+    display: flex;
+    background: #fff;
+    padding: .5em;
+    margin: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    cursor: pointer
+}
+
+#whatsapp p,
+#correo p,
+#facebook p,
+#messenger p,
+#youtube p {
+    position: relative;
+    transition: all .75s;
+    left: 0em;
+}
+
+.redIcon {
+    width: 50px;
+    text-align: center;
+    margin: auto 0;
+    font-size: 1.5em;
+    transition: all .75s;
+}
+
+#whatsapp span {
+    color: #25D366;
+}
+
+#correo span {
+    color: #c455a1
+}
+
+#facebook span {
+    color: #3b5999;
+}
+
+#messenger span {
+    color: #0084ff;
+}
+
+#youtube span {
+    color: #cd201f;
+}
+
+#whatsapp:hover {
+    background: #25D366;
+}
+
+#correo:hover {
+    background: #c455a1;
+}
+
+#facebook:hover {
+    background: #3b5999;
+}
+
+#messenger:hover {
+    background: #0084ff;
+}
+
+#youtube:hover {
+    background: #cd201f;
+}
+
+.redItem:hover span {
+    transform: scale(5) rotate(30deg);
+}
+
+.redItem:hover span i {
+    color: #fff;
+}
+
+.redItem:hover p {
+    color: #fff !important;
+    left: 3em !important;
+}

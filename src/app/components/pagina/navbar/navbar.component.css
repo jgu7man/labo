@@ -12,27 +12,28 @@
 #logoContainer {
     width: 45%;
     padding-top: 2em;
-    transition: all .3s ease-out
+    transition: all .3s ease-out;
+    cursor: pointer;
 }
 
 #logoContainer img {
     width: 100%;
 }
 
-ul#nav-mobile {
+#nav-mobile {
     display: flex;
 }
 
-ul#nav-mobile li a {
+#nav-mobile li a {
     color: #ffffff;
     cursor: pointer;
 }
 
-ul#nav-mobile li a.active {
+#nav-mobile li a.active {
     color: #761f87;
 }
 
-ul#nav-mobile li {
+#nav-mobile li {
     margin: 15px 25px;
     text-transform: uppercase;
     font-weight: 600;
@@ -49,4 +50,44 @@ ul#nav-mobile li {
     padding: 0 7.5%;
     background: white;
     box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}
+
+.openMenu {
+    position: relative;
+    top: 1em;
+    font-size: 1.5em;
+    color: #c355a1;
+}
+
+.close {
+    color: #ffffff !important;
+    z-index: 21;
+}
+
+.opened {
+    right: 0 !important;
+}
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        width: 100vw;
+        top: -1px;
+    }
+    #logoContainer {
+        width: 95%;
+    }
+    .scrolled {
+        width: 50% !important;
+    }
+    #nav-mobile {
+        display: block;
+        height: 100vh;
+        position: fixed;
+        top: -1em;
+        right: -170px;
+        text-align: right;
+        background: #761f87;
+        padding-top: 3em;
+        transition: all .3s ease-in;
+    }
 }

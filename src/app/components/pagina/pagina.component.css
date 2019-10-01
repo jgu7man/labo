@@ -1,0 +1,22 @@
+.contenido {
+    margin-bottom: 14em;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+}
+
+app-footer {
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    width: 100vw;
+}
+
+@media screen and (max-width: 450px) {
+    .contenido {
+        margin-bottom: 22em
+    }
+    .contenidoHome {
+        margin-bottom: 54em
+    }
+}

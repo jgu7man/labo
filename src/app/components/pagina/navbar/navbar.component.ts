@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public logo
+  public close: boolean = false
   constructor() { }
 
   ngOnInit() {
+    if (window.screen.width >= 450) {
+      this.logo = '../../../../assets/img/LaboLogo.png'
+    } else {
+      this.logo = '../../../../assets/img/LogoHorizontal.png'
+    }
+
+
     $(window).scroll(() => {
       if ($(window).scrollTop()) {
         $("#logoContainer").addClass('scrolled')
@@ -23,4 +32,9 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  onMenu() {
+    $("#nav-mobile").toggleClass('opened')
+    $(".openMenu").toggleClass('close')
+    this.close = !this.close
+  }
 }

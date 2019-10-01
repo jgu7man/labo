@@ -1,14 +1,18 @@
 <div class="navbar">
     <div class="row">
-        <div class="col s6">
-            <div id="logoContainer" class="brand-logo">
-                <img src="../../../../assets/img/LaboLogo.png" alt="">
+        <div class="col s10 m6">
+            <div id="logoContainer" class="brand-logo" [routerLink]="['/']">
+                <img [src]="logo" alt="">
             </div>
         </div>
-        <div class="col s6">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li [routerLink]="['/']" routerLinkActive="active"><a>Servicios</a></li>
-                <li [routerLink]="['/']" routerLinkActive="active"><a>Contáctanos</a></li>
+        <div class="col s2 m6">
+            <div class="openMenu hide-on-large-only" (click)="onMenu()">
+                <i class="fas fa-bars" *ngIf="!close"></i>
+                <i class="fas fa-times" *ngIf="close"></i>
+            </div>
+            <ul id="nav-mobile" class="right">
+                <li (click)="onMenu()" [routerLink]="['/servicios']" routerLinkActive="active"><a>Servicios</a></li>
+                <li (click)="onMenu()" [routerLink]="['/contactanos']" routerLinkActive="active"><a>Contáctanos</a></li>
             </ul>
         </div>
     </div>

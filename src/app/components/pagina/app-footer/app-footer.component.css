@@ -1,11 +1,14 @@
 footer {
-    position: relative;
-    top: 100vh;
+    /* position: relative; */
+    /* top: 100vh; */
     padding-left: 0;
 }
 
 .imgLogoMono {
     max-width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .imgLogoMono img {

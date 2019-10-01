@@ -1,0 +1,56 @@
+.tarjeta {
+    position: relative;
+    left: 50% !important;
+    transform: translateX(-30%);
+}
+
+.imgAccion,
+.content {
+    width: 300px;
+    height: 252px;
+    overflow: hidden;
+}
+
+.imgAccion img {
+    width: 100%;
+}
+
+.face {
+    transition: all .4s;
+}
+
+.content {
+    background: #761f87;
+    color: #ffffff;
+    padding: 1em;
+    font-size: 1.5em;
+    width: 300px;
+    height: 252px;
+    display: flex;
+    align-items: center;
+}
+
+.face1 {
+    transform: translateX(150px);
+    z-index: 1;
+}
+
+.face2 {
+    transform: translateX(-150px);
+}
+
+.tarjeta:hover .face {
+    transform: translateX(0)
+}
+
+@media screen and (max-width: 450px) {
+    .face1,
+    .face2 {
+        transform: translate(0)
+    }
+    .tarjeta {
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -7,6 +7,7 @@
     background-position: 0 0;
     background-size: 100% 50%;
     background-repeat: no-repeat;
+    margin-bottom: 14em;
 }
 
 .accion {
@@ -31,6 +32,35 @@
     height: 250px;
     width: auto;
     position: relative;
+}
+
+@media screen and (max-width: 450px) {
+    #acciones {
+        background-image: none;
+        min-height: 290vh;
+    }
+    .imgContainer {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 5em
+    }
+    .accionNum {
+        display: inline-block;
+    }
+    .accionNum h3 {
+        transform: rotate(-45deg) translate(10%, -5%) !important;
+    }
+    .m8 {
+        margin-bottom: 5em;
+        text-align: center;
+    }
+    .righted .m8 {
+        text-align: center;
+    }
+    .righted .accionNum {
+        position: relative;
+        left: 0%;
+    }
 }
 
 @media screen and (min-width: 400px) {
