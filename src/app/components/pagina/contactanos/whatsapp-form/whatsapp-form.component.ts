@@ -9,7 +9,7 @@ import { WhatsappModel } from 'src/app/models/whatsapp.model';
 export class WhatsappFormComponent implements OnInit {
 
   public mensaje: WhatsappModel
-  public numero: number = 523121805955
+  public numero: number = +50769404686
   constructor() {
     this.mensaje = new WhatsappModel('','')
    }

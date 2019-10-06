@@ -11,7 +11,7 @@ export class ContactFormComponent implements OnInit {
   public contacto: ContactactoModel;
   public mensaje: string
   public enviado = false
-  public correoToSend = 'jqu7man@gmail.com'
+  public correoToSend = 'info@labo-app.com'
   constructor() {
     this.contacto = new ContactactoModel('','','','')
    }
