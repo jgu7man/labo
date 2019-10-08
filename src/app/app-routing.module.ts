@@ -5,6 +5,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { InicioComponent } from './components/pagina/inicio/inicio.component';
 import { ServiciosComponent } from './components/pagina/servicios/servicios.component';
 import { ContactanosComponent } from './components/pagina/contactanos/contactanos.component';
+import { PdpComponent } from './components/pagina/app-footer/pdp/pdp.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
     path: '', component: PaginaComponent, children: [
     { path: '', component: InicioComponent },
       { path: 'servicios', component: ServiciosComponent },
-      { path: 'contactanos', component: ContactanosComponent }
+      { path: 'contactanos', component: ContactanosComponent },
+      { path: 'politica-de-privacidad', component: PdpComponent}
   ]},
   {
     path: 'admin', component: AdminComponent, children: [

@@ -25,6 +25,7 @@ import { ContenidoContactanosComponent } from './components/pagina/contactanos/c
 import { SocialMenuComponent } from './components/pagina/contactanos/social-menu/social-menu.component';
 import { ContactFormComponent } from './components/pagina/contactanos/contact-form/contact-form.component';
 import { WhatsappFormComponent } from './components/pagina/contactanos/whatsapp-form/whatsapp-form.component';
+import { PdpComponent } from './components/pagina/app-footer/pdp/pdp.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { WhatsappFormComponent } from './components/pagina/contactanos/whatsapp-
     SocialMenuComponent,
     ContactFormComponent,
     WhatsappFormComponent,
+    PdpComponent,
   ],
   imports: [
     BrowserModule,
