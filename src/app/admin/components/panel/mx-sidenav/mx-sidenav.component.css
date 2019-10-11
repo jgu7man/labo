@@ -1,0 +1,25 @@
+.sidenav {
+    transform: translateX(0) !important;
+}
+
+.profileImgContainer {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.profileImgContainer img {
+    width: 105% !important;
+    height: auto !important;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sidenav li>a>i {
+    font-size: 1.75em;
+}

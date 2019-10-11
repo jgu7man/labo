@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule,  } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from "./admin/admin.module";
 
 import { AppComponent } from './app.component';
 import { PaginaComponent } from './components/pagina/pagina.component';
@@ -12,7 +13,6 @@ import { AppFooterComponent } from './components/pagina/app-footer/app-footer.co
 import { InicioComponent } from './components/pagina/inicio/inicio.component';
 import { HeroComponent } from './components/pagina/inicio/hero/hero.component';
 
-import { AdminComponent } from './components/admin/admin.component';
 import { InfoComponent } from './components/pagina/inicio/info/info.component';
 import { AccionesComponent } from './components/pagina/inicio/acciones/acciones.component';
 import { DestacadosComponent } from './components/pagina/inicio/destacados/destacados.component';
@@ -27,11 +27,12 @@ import { ContactFormComponent } from './components/pagina/contactanos/contact-fo
 import { WhatsappFormComponent } from './components/pagina/contactanos/whatsapp-form/whatsapp-form.component';
 import { PdpComponent } from './components/pagina/app-footer/pdp/pdp.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PaginaComponent,
-    AdminComponent,
+    // AdminComponent,
     InicioComponent,
     NavbarComponent,
     AppFooterComponent,
@@ -49,8 +50,12 @@ import { PdpComponent } from './components/pagina/app-footer/pdp/pdp.component';
     ContactFormComponent,
     WhatsappFormComponent,
     PdpComponent,
+    // LoginComponent,
+    // PanelComponent,
+    // SidebarComponent,
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

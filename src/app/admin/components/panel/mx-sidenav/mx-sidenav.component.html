@@ -1,0 +1,39 @@
+<ul id="slide-out" class="sidenav">
+    <li>
+        <div class="user-view">
+            <div class="background primary">
+                <img src="">
+            </div>
+            <div href="#user" class="profileImgContainer">
+                <img class="circle" src="app/admin/assets/img/defaultUser.png">
+            </div>
+            <a href="#name">
+                <span class="white-text name">John Doe</span>
+            </a>
+            <a href="#email">
+                <span class="white-text email">jdandturk@gmail.com</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <a class="waves-effect" [routerLink]="['admins']" routerLinkActive="active">
+            <i class="fas fa-users"></i> Administradores
+        </a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">Acordeon</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a>Primero</a></li>
+                        <li><a>Segundo</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>

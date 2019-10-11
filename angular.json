@@ -21,10 +21,12 @@
                         "aot": false,
                         "assets": [
                             "src/assets/img/LaboIco.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/app/admin/assets/img"
                         ],
                         "styles": [
                             "src/styles.css",
+                            "src/app/admin/assets/css/admin.style.css",
                             "src/assets/css/ghpages-materialize.css",
                             "node_modules/materialize-css/dist/css/materialize.min.css"
                         ],
