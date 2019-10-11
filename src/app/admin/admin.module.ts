@@ -13,6 +13,7 @@ import { MxDashboardComponent } from './components/panel/mx-dashboard/mx-dashboa
 import { MxSidenavComponent } from './components/panel/mx-sidenav/mx-sidenav.component';
 import { MxAdminsComponent } from './components/panel/mx-admins/mx-admins.component';
 import { MxTableComponent } from './components/panel/mx-table/mx-table.component';
+import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-agregar-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MxTableComponent } from './components/panel/mx-table/mx-table.component
     MxSidenavComponent,
     MxAdminsComponent,
     MxTableComponent,
+    MxAgregarFormComponent,
   ],
   imports: [
     BrowserModule,

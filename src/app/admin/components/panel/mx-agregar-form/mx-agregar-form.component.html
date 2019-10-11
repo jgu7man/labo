@@ -1,0 +1,18 @@
+<div class="admin-container">
+    <div class="row">
+        <div class="col s12">
+            <h4>AGREGAR {{tableName.toUpperCase()}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <form action="#" method="post" #addForm="ngForm" (ngSubmit)="onSubmit()" onsubmit="return false">
+            <div class="col s12 input-field" *ngFor="let item of tabla.inputs">
+                <input type="{{item.inputType}}" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                <label for="{{item.name}}">{{item.display}}</label>
+            </div>
+            <div class="col s12 center">
+                <button class="btn primary">AGREGAR</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+@Injectable({providedIn: 'root'})
 export class AdminModel{
     constructor(
         public username: string,
@@ -7,7 +9,7 @@ export class AdminModel{
         public lastName: string
     ) { }
     
-    AdminTable = {
+    public AdminEntity = {
         tag: 'admins',
         inputs: [
             {

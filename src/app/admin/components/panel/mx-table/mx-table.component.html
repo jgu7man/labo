@@ -1,1 +1,24 @@
-<p>mx-table works!</p>
+<div class="col s12 right">
+    <button class="btn primary" [routerLink]="['/admin/panel/agregar/', currentTabla]">AGREGAR</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let campo of tabla.inputs">
+                {{campo.display}}
+            </th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fila of DATA">
+            <td *ngFor="let col of fila">
+                {{col.value}}
+            </td>
+            <td class="options">
+                <i class="fas fa-edit blue-text"></i>
+                <i class="fas fa-trash red-text"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>

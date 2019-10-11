@@ -6,6 +6,7 @@ import { PanelComponent } from './components/panel/panel.component';
 import { MxDashboardComponent } from './components/panel/mx-dashboard/mx-dashboard.component';
 import { MxUsuariosComponent } from './components/panel/mx-usuarios/mx-usuarios.component';
 import { MxAdminsComponent } from './components/panel/mx-admins/mx-admins.component';
+import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-agregar-form.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
         path: 'panel', component: PanelComponent, children: [
           { path: '', component: MxDashboardComponent },
           { path: 'dashboard', component: MxDashboardComponent },
-          { path: 'admins', component: MxAdminsComponent, data:{tag:'admins'}}
+          { path: 'agregar/:entity', component: MxAgregarFormComponent},
+          { path: 'admins', component: MxAdminsComponent, data: { tag: 'admins' } },
       ]}
   ]}
 ];
