@@ -15,51 +15,26 @@
             </a>
         </div>
     </li>
-    <li><a>First Sidebar Link</a></li>
-    <li><a>Second Sidebar Link</a></li>
-    <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
+
+    <li class="no-padding" *ngFor="let item of menu">
+        <ul>
             <li>
-                <a class="collapsible-header">Dropdown</a>
-                <div class="collapsible-body">
+                <a class="waves-effect" [routerLink]="[item.link]" routerLinkActive="active">
+                    <i class="fas" [ngClass]="item.icon"></i> {{item.display}}
+                </a>
+                <div>
                     <ul>
-                        <li><a>First</a></li>
-                        <li><a>Second</a></li>
-                        <li><a>Third</a></li>
-                        <li><a>Fourth</a></li>
+                        <li *ngFor="let item of item.submenu">
+                            <a class="waves-effect" [routerLink]="[item.link]" routerLinkActive="active">
+                                <i class="fas" [ngClass]="item.icon"></i> {{item.display}}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
-        </ul>
-    </li>
-    <li><a>First Sidebar Link</a></li>
-    <li><a>Second Sidebar Link</a></li>
-    <li><a class="dropdown-button" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    <ul id='dropdown1' class='dropdown-content'>
-        <li><a>First</a></li>
-        <li><a>Second</a></li>
-        <li><a>Third</a></li>
-        <li><a>Fourth</a></li>
-    </ul>
-    <!-- <li>
-        <a class="waves-effect" [routerLink]="['admins']" routerLinkActive="active">
-            <i class="fas fa-users"></i> Administradores
-        </a>
-    </li>
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
             <li>
-                <a class="collapsible-header">Acordeon</a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a>Primero</a></li>
-                        <li><a>Segundo</a></li>
-                    </ul>
-                </div>
+                <div class="divider"></div>
             </li>
         </ul>
-    </li> -->
+    </li>
 </ul>

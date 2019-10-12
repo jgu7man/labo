@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidenavService } from '../../../services/sidenav.service';
 
 @Component({
   selector: 'mx-sidenav',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MxSidenavComponent implements OnInit {
 
-  constructor() { }
+  public menu: any
+  constructor(
+    private _sidenav: SidenavService
+  ) {
+    this.menu = _sidenav.menu
+   }
 
   ngOnInit() {
     $(document).ready(function(){
       $('.sidenav').sidenav();
     });
+
   //   $(".button-collapse").sideNav();
   //   $('.collapsible').collapsible();
   //   $('.button-collapse').sideNav({
