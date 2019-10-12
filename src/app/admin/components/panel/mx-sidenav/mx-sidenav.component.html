@@ -15,7 +15,33 @@
             </a>
         </div>
     </li>
-    <li>
+    <li><a>First Sidebar Link</a></li>
+    <li><a>Second Sidebar Link</a></li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">Dropdown</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a>First</a></li>
+                        <li><a>Second</a></li>
+                        <li><a>Third</a></li>
+                        <li><a>Fourth</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li><a>First Sidebar Link</a></li>
+    <li><a>Second Sidebar Link</a></li>
+    <li><a class="dropdown-button" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a>First</a></li>
+        <li><a>Second</a></li>
+        <li><a>Third</a></li>
+        <li><a>Fourth</a></li>
+    </ul>
+    <!-- <li>
         <a class="waves-effect" [routerLink]="['admins']" routerLinkActive="active">
             <i class="fas fa-users"></i> Administradores
         </a>
@@ -35,5 +61,5 @@
                 </div>
             </li>
         </ul>
-    </li>
+    </li> -->
 </ul>
