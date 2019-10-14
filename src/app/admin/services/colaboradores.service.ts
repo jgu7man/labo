@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as DATA from '../jsons/colaboradores.json'
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,25 @@ export class ColaboradoresService {
   constructor() { }
 
   async getColaboradores() {
-    return DATA.default
+    return this.DATA
   }
+
+  DATA = [
+    {
+         email: "jgu7man@gmail.com",
+         firstName: "Jorge",
+         lastName: "Guzman",
+         address: "C. Independencia 34, Centro, Colima",
+         password: "123456"
+     },
+     {
+         email: "meche33@gmail.com",
+         firstName: "Mercedes",
+         lastName: "Amezcua",
+         address: "C. Reforma 567, Centro, Colima",
+         password: "654321"
+     }
+ ]
 
   public ColaboradoresEntity = {
     tag: 'colaboradores',

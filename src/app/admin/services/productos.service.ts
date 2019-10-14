@@ -1,5 +1,4 @@
 import { Injectable, OnInit } from '@angular/core';
-import * as DATA from '../jsons/productos.json'
 import { CategoriasService } from './categorias.service';
 
 @Injectable({
@@ -26,8 +25,30 @@ export class ProductosService {
   
 
   async getProductos() {
-    return DATA.default
+    return this.DATA
   }
+
+  DATA = [{
+        codigo: "1",
+        name: "Lavado de ropa",
+        descripcion: "Lavado de ropa",
+        unidad: "kg",
+        precio: 10,
+        categoria: "lavado",
+        activar: true,
+        imagen: ""
+    },
+    {
+        codigo: "2",
+        name: "Lavado de edredón",
+        descripcion: "Lavado de edredón",
+        unidad: "pz",
+        precio: 35,
+        categoria: "lavado",
+        activar: true,
+        imagen: ""
+    }
+]
 
 
   public ProductosEntity = {

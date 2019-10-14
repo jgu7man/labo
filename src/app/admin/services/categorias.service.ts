@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as DATA from '../jsons/categorias.json'
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,25 @@ export class CategoriasService {
   constructor() { }
 
   async getCategorias() {
-    return DATA.default
+    return this.DATA
   }
+
+  DATA = [
+    {
+        codigo: "1",
+        name: "Lavado",
+        descripcion: "Todo lo que va a la lavadora",
+        comentario: "",
+        crearProducto: false
+    },
+    {
+        codigo: "2",
+        name: "Planchado",
+        descripcion: "Todo lo que se pasa por la plancha",
+        comentario: "",
+        crearProducto: false
+    }
+  ]
 
 
   public CategoriasEntity = {

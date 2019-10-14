@@ -21,7 +21,7 @@ export class MxSidenavComponent implements OnInit {
     });
 
     setTimeout(function (){
-      $('.button-collapse').sideNav('show');
+      $('.button-collapse').sidenav();
     },1000)
     $('.collapsible').collapsible();
   //   $('.button-collapse').sideNav({

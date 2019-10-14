@@ -10,7 +10,8 @@ export class EntidadesService {
     
     entidades = []
     entidad
-    public DATA
+  public DATA
+  public docs: any
     constructor(
         private _colaboradores: ColaboradoresService,
         private _usuarios: UsuariosService,
@@ -34,23 +35,23 @@ export class EntidadesService {
             switch (currentEntity) {
           case 'colaboradores':
             this.DATA = []
-            var docs = await this._colaboradores.getColaboradores()
-            var data = await this.arrayDATA(docs)
+            this.docs = await this._colaboradores.getColaboradores()
+            var data = await this.arrayDATA(this.docs)
             break;
           case 'usuarios':
             this.DATA = []
-            var docs = await this._usuarios.getUsuarios()
-            var data = await this.arrayDATA(docs)
+            this.docs = await this._usuarios.getUsuarios()
+            var data = await this.arrayDATA(this.docs)
             break;
           case 'categorias':
             this.DATA = []
-            var docs = await this._categorias.getCategorias()
-            var data = await this.arrayDATA(docs)
+            this.docs = await this._categorias.getCategorias()
+            var data = await this.arrayDATA(this.docs)
             break;
           case 'productos':
             this.DATA = []
-            var docs = await this._productos.getProductos()
-            var data = await this.arrayDATA(docs)
+            this.docs = await this._productos.getProductos()
+            var data = await this.arrayDATA(this.docs)
             break;
         
           default:
