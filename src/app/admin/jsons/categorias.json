@@ -1,0 +1,15 @@
+[{
+        "codigo": "1",
+        "name": "Lavado",
+        "descripcion": "Todo lo que va a la lavadora",
+        "comentario": "",
+        "crearProducto": false
+    },
+    {
+        "codigo": "2",
+        "name": "Planchado",
+        "descripcion": "Todo lo que se pasa por la plancha",
+        "comentario": "",
+        "crearProducto": false
+    }
+]

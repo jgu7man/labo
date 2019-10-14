@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminModel } from '../../models/admin.model';
-import { AdminsService } from '../../services/admins.service';
+import { ColaboradoresService } from '../../services/colaboradores.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public admin: AdminModel
   constructor(
-    private _Admins: AdminsService,
+    private _colaboradores: ColaboradoresService,
     private router: Router
   ) {
     this.admin = new AdminModel('','','','','');
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    // this._Admins.login(this.admin.email, this.admin.contra)
+    // this._colaboradores.login(this.admin.email, this.admin.contra)
   }
 
 }

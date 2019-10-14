@@ -20,6 +20,29 @@
     transform: translate(-50%, -50%);
 }
 
+.user-view {
+    height: 10em;
+}
+
+.user-view>.background img {
+    max-height: 70%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a,
+i {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: .5px;
+}
+
 .sidenav li>a>i {
     font-size: 1.75em;
+}
+
+.sidenav li>a {
+    text-transform: uppercase;
 }

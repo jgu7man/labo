@@ -12,26 +12,26 @@ export class SidenavService {
       id: 'dashboard',
       display: 'tablero',
       icon: 'fa-columns',
-      link:'',
+      link: 'dashboard',
       submenu: []
     },
     {
       id: 'clientes',
       display: 'clientes',
       icon: 'fa-users',
-      link:'',
+      link:'lista',
       submenu: [
         {
           id: 'colaboradores',
           display: 'colaboradores',
           icon: 'fa-users-cog',
-          link:'',
+          link:'colaboradores',
         },
         {
           id: 'usuarios',
-          display: 'colaboradores',
+          display: 'usuarios',
           icon: 'fa-user',
-          link:'',
+          link:'usuarios',
         },
       ]
     },
@@ -39,26 +39,38 @@ export class SidenavService {
       id: 'prod_cat',
       display: 'productos y categorías',
       icon: 'fa-box-open',
-      link:'',
-      submenu: []
+      link:'lista',
+      submenu: [
+        {
+          id: 'productos',
+          display: 'productos',
+          icon: 'fa-box',
+          link:'productos',
+        },{
+          id: 'categorias',
+          display: 'categorías',
+          icon: 'fa-boxes',
+          link:'categorias',
+        },
+      ]
     },
     {
       id: 'pedidos',
       display: 'pedidos',
       icon: 'fa-tags',
-      link:'',
+      link:'lista',
       submenu: [
         {
           id: 'procesados',
-          display: 'tag',
+          display: 'procesados',
           icon: 'fa-tags',
-          link:'',
+          link:'procesados',
         },
         {
-          id: 'procesados',
-          display: 'tag',
+          id: 'pendientes',
+          display: 'pendientes',
           icon: 'fa-user-tag',
-          link:'',
+          link:'pendientes',
         },
       ]
     },

@@ -1,10 +1,10 @@
-<ul id="slide-out" class="sidenav">
+<ul id="slide-out" class="sidenav primary white-text">
     <li>
         <div class="user-view">
-            <div class="background primary">
-                <img src="">
+            <div class="background white">
+                <img src="/assets/img/LaboLogo.png">
             </div>
-            <div href="#user" class="profileImgContainer">
+            <!-- <div href="#user" class="profileImgContainer">
                 <img class="circle" src="app/admin/assets/img/defaultUser.png">
             </div>
             <a href="#name">
@@ -12,28 +12,34 @@
             </a>
             <a href="#email">
                 <span class="white-text email">jdandturk@gmail.com</span>
-            </a>
+            </a> -->
         </div>
     </li>
 
     <li class="no-padding" *ngFor="let item of menu">
-        <ul>
+        <ul class="collapsible collapsible-accordion">
             <li>
-                <a class="waves-effect" [routerLink]="[item.link]" routerLinkActive="active">
-                    <i class="fas" [ngClass]="item.icon"></i> {{item.display}}
+                <a class="collapsible-header" [routerLink]="[item.link] " routerLinkActive="active" *ngIf="item.link != 'lista'; else disabaleLink">
+                    <i class="fas " [ngClass]="item.icon "></i> {{item.display}}
                 </a>
-                <div>
+                <ng-template #disabaleLink>
+                    <a class="collapsible-header">
+                        <i class="fas " [ngClass]="item.icon "></i> {{item.display}}
+                    </a>
+                </ng-template>
+
+                <div class="collapsible-body secondary">
                     <ul>
-                        <li *ngFor="let item of item.submenu">
-                            <a class="waves-effect" [routerLink]="[item.link]" routerLinkActive="active">
-                                <i class="fas" [ngClass]="item.icon"></i> {{item.display}}
+                        <li *ngFor="let subitem of item.submenu ">
+                            <a [routerLink]="[item.link, subitem.link] " routerLinkActive="active ">
+                                <i class="fas " [ngClass]="subitem.icon "></i> {{subitem.display}}
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
-                <div class="divider"></div>
+                <div class="divider "></div>
             </li>
         </ul>
     </li>

@@ -4,3 +4,30 @@
     width: 70%;
     margin: 0 auto;
 }
+
+.disabledLink {
+    /* pointer-events: none; */
+    cursor: default;
+}
+
+select {
+    display: block !important;
+    /* width: auto !important;
+    height: 40px !important;
+    opacity: 1 !important;
+    pointer-events: visible !important;
+    top: -30px !important; */
+}
+
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+td {
+    color: #761f87;
+}

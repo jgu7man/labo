@@ -20,8 +20,10 @@ export class MxSidenavComponent implements OnInit {
       $('.sidenav').sidenav();
     });
 
-  //   $(".button-collapse").sideNav();
-  //   $('.collapsible').collapsible();
+    setTimeout(function (){
+      $('.button-collapse').sideNav('show');
+    },1000)
+    $('.collapsible').collapsible();
   //   $('.button-collapse').sideNav({
   //     menuWidth: 300, // Default is 300
   //     edge: 'right', // Choose the horizontal origin

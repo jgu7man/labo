@@ -1,0 +1,15 @@
+ [{
+         "email": "jgu7man@gmail.com",
+         "firstName": "Jorge",
+         "lastName": "Guzman",
+         "address": "C. Independencia 34, Centro, Colima",
+         "password": "123456"
+     },
+     {
+         "email": "meche33@gmail.com",
+         "firstName": "Mercedes",
+         "lastName": "Amezcua",
+         "address": "C. Reforma 567, Centro, Colima",
+         "password": "654321"
+     }
+ ]

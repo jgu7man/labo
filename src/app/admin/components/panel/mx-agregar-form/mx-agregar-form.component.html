@@ -1,4 +1,4 @@
-<div class="admin-container">
+<div class="admin-container" *ngIf="tabla">
     <div class="row">
         <div class="col s12">
             <h4>AGREGAR {{tableName.toUpperCase()}}</h4>
@@ -6,10 +6,29 @@
     </div>
     <div class="row">
         <form action="#" method="post" #addForm="ngForm" (ngSubmit)="onSubmit()" onsubmit="return false">
-            <div class="col s12 input-field" *ngFor="let item of tabla.inputs">
-                <input type="{{item.inputType}}" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
-                <label for="{{item.name}}">{{item.display}}</label>
+
+            <div *ngFor="let item of tabla.inputs">
+                <div class="col s12 input-field" *ngIf="item.inputType != 'select'; else selectInput">
+
+                    <input type="{{item.inputType}}" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                    <label for="{{item.name}}">{{item.display}}</label>
+                </div>
+
+                <ng-template #selectInput>
+                    <div class="col s12">
+                        <label for="{{item.name}}">{{item.display}}</label>
+                        <select name="item.name" id="item.name" [(ngModel)]="item.value">
+                            <option *ngFor="let option of item.value"
+                                value="option">
+                                {{option}}
+                            </option>
+                        </select>
+                    </div>
+                </ng-template>
             </div>
+
+
+
             <div class="col s12 center">
                 <button class="btn primary">AGREGAR</button>
             </div>

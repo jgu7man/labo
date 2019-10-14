@@ -7,6 +7,8 @@ import { MxDashboardComponent } from './components/panel/mx-dashboard/mx-dashboa
 import { MxUsuariosComponent } from './components/panel/mx-usuarios/mx-usuarios.component';
 import { MxAdminsComponent } from './components/panel/mx-admins/mx-admins.component';
 import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-agregar-form.component';
+import { MxTableComponent } from './components/panel/mx-table/mx-table.component';
+import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,7 @@ const routes: Routes = [
           { path: 'dashboard', component: MxDashboardComponent },
           { path: 'agregar/:entity', component: MxAgregarFormComponent},
           { path: 'admins', component: MxAdminsComponent, data: { tag: 'admins' } },
+          { path: 'lista/:tabla', component: MxListaComponent}
       ]}
   ]}
 ];
