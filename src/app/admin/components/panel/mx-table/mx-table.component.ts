@@ -14,6 +14,7 @@ export class MxTableComponent implements OnInit, OnChanges {
   public tabla
   public DATA = []
   public inputs = []
+  public selected
   constructor(
     private _ruta: ActivatedRoute,
     private _entidades: EntidadesService,
@@ -34,6 +35,11 @@ export class MxTableComponent implements OnInit, OnChanges {
       }
     })
     this.getDATA(this.currentTabla)
+  }
+
+  toDelete(id) {
+    this.selected = id
+    $('mx-delete-popup').fadeToggle()
   }
 
   getDATA(tabla) {

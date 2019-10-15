@@ -18,10 +18,11 @@
                 </td>
                 <td class="options">
                     <i [routerLink]="[i]" class="fas waves-circle waves-effect fa-info-circle green-text"></i>
-                    <i class="fas waves-circle waves-effect fa-edit blue-text"></i>
-                    <i class="fas waves-circle waves-effect fa-trash red-text"></i>
+                    <i [routerLink]="['../../editar', currentTabla, i]" routerLinkActive="router-link-active" class="fas waves-circle waves-effect fa-edit blue-text"></i>
+                    <i (click)="toDelete(i)" class="fas waves-circle waves-effect fa-trash red-text"></i>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<mx-delete-popup *ngIf="tabla" class="overlay" [tabla]="tabla" [elemento]="selected"></mx-delete-popup>

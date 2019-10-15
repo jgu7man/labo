@@ -19,6 +19,7 @@ import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-ag
 import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component';
 import { MxInfoComponent } from './components/panel/mx-info/mx-info.component';
 import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-form.component';
+import { MxDeletePopupComponent } from './components/panel/mx-delete-popup/mx-delete-popup.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-for
     MxListaComponent,
     MxInfoComponent,
     MxEditFormComponent,
+    MxDeletePopupComponent,
   ],
   imports: [
     BrowserModule,

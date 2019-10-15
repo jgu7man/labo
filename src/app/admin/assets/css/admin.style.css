@@ -27,3 +27,25 @@ th,
 td {
     color: #761f87 !important;
 }
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.pop-up {
+    max-width: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    background: #ffffff;
+    padding: 1em;
+}

@@ -1,1 +1,48 @@
-<p>mx-edit-form works!</p>
+<div class="admin-container" *ngIf="tabla">
+    <div class="row">
+        <div class="col s12">
+            <h4>EDITAR {{tableName.toUpperCase()}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <form action="#" method="post" #addForm="ngForm" (ngSubmit)="onSubmit()" onsubmit="return false">
+
+            <div *ngFor="let item of tabla.inputs; let id = index; trackBy: trackByFn">
+                <div class="col s12 input-field" *ngIf="item.inputType != 'select' && item.inputType != 'file'; else selectInput">
+
+                    <input type="{{item.inputType}}" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                    <label for="{{item.name}}">{{item.display}}</label>
+                </div>
+
+                <ng-template #selectInput>
+                    <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
+                        <label for="{{item.name}}">{{item.display}}</label>
+                        <select #select name="item.name" id="item.name" [(ngModel)]="item.value">
+                            <option *ngFor="let option of item.value"
+                                value="{{option}}">
+                                {{option}}
+                            </option>
+                        </select>
+                    </div>
+                </ng-template>
+                <ng-template #fileInput>
+                    <div class="col s12 file-field file-input">
+                        <div class="btn primary">
+                            <span>{{item.display}}</span>
+                            <input type="file" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.value">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input type="text" class="file-path validate">
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+
+
+
+            <div class="col s12 center">
+                <button class="btn primary">EDITAR</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="admin-container">
+    <div class="pop-up center">
+        <div class="row">
+            <div class="col s12">
+                <i class="fas fa-times right  primary-text" (click)="onCancelar()"></i>
+            </div>
+        </div>
+        <div class=" row ">
+            <div class="col s12 ">
+                <h5>ELIMINAR</h5>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col s12 ">
+                <h6>¿Deseas eliminar este {{tabla.singleName}}?</h6>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col s6 ">
+                <button class="btn secondary " (click)="onCancelar() ">Cancelar</button>
+            </div>
+            <div class="col s6 ">
+                <button class="btn primary" (click)="onAceptar()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

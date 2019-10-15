@@ -16,9 +16,9 @@ import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-for
 const routes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
+      { path: '', redirectTo: 'panel', pathMatch: 'full'},
       { path: 'login', component: LoginComponent },
-      {
-        path: 'panel', component: PanelComponent, children: [
+      { path: 'panel', component: PanelComponent, children: [
           { path: '', component: MxDashboardComponent },
           { path: 'dashboard', component: MxDashboardComponent },
           { path: 'agregar/:entity', component: MxAgregarFormComponent },
