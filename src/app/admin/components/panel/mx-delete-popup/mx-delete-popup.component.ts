@@ -15,7 +15,6 @@ export class MxDeletePopupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.tabla, this.elemento)
   }
 
   onCancelar() {

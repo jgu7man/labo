@@ -17,7 +17,9 @@ export class MxAgregarFormComponent implements OnInit {
   public tabla: TablaModel
   public model = {}
   public tableName: string
-
+  public inputs = []
+  public turnInputs = []
+  public inputsOpcionales = []
   constructor(
     private _ruta: ActivatedRoute,
     private _loaction: Location,
@@ -29,12 +31,21 @@ export class MxAgregarFormComponent implements OnInit {
       this.currentTabla = data['entity']
     })
     this.tabla = await this._entidades.getCurrentEntity(this.currentTabla)
-    console.log(this.tabla)
+    this.tabla.inputs.forEach(input => {
+      if (input.opcional || input.turnOpciones) {
+        this.inputsOpcionales.push(input)
+      } else {
+        this.inputs.push(input)
+      }
+    })
     this.tableName = this.tabla.singleName
   }
 
-  getSelectValue(event) {
-    console.log(event)
+  turnOpciones(inputClicked) {
+    var input = this.inputsOpcionales.find(input => input.name === inputClicked)
+    input.value = !input.value
+    
+    $(".opcionales").slideToggle()
   }
 
   onSubmit() {

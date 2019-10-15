@@ -1,3 +1,7 @@
 .file-input {
     margin: 2em 0 !important;
 }
+
+.opcionales {
+    display: none;
+}

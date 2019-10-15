@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoriasService {
-
+  
+  public unidadMedida = ['kg','pz']
   constructor() { }
 
   // async getCategorias() {
@@ -52,7 +53,24 @@ export class CategoriasService {
             display: 'Crear Producto de Categoría',
             inputType: 'checkbox',
             value: false,
-            visible: false
+            visible: false,
+            turnOpciones: true
+          },
+          {
+            name: 'precio',
+            display: 'Precio del producto',
+            inputType: 'text',
+            value: '',
+            visible: false,
+            opcional: true
+          },
+          {
+            name: 'uniadad',
+            display: 'Unidad de medida',
+            inputType: 'select',
+            value: this.unidadMedida,
+            visible: false,
+            opcional: true
           },
         ]
     }
