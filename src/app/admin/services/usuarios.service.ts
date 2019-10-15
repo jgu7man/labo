@@ -7,25 +7,6 @@ export class UsuariosService {
 
   constructor() { }
 
-  async getUsuarios() {
-    return this.DATA
-  }
-
-  DATA =  [{
-         email: "jdaniel@gmail.com",
-         firstName: "Jose Daniel",
-         lastName: "Leon",
-         address: "C. Independencia 34, Centro, Colima",
-         password: "123456"
-     },
-     {
-         email: "chistianc@gmail.com",
-         firstName: "Cristian",
-         lastName: "Campoverde",
-         address: "C. Reforma 567, Centro, Colima",
-         password: "654321"
-     }
- ]
 
 
   public UsuariosEntity = {

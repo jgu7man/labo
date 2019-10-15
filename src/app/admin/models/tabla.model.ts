@@ -6,3 +6,7 @@ export class TablaModel{
         public inputs: any[]
     ){}
 }
+
+export interface UsuariosInterface {
+    
+}

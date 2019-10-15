@@ -7,26 +7,11 @@ export class ColaboradoresService {
 
   constructor() { }
 
-  async getColaboradores() {
-    return this.DATA
-  }
+  // async getColaboradores() {
+  //   return this.DATA
+  // }
 
-  DATA = [
-    {
-         email: "jgu7man@gmail.com",
-         firstName: "Jorge",
-         lastName: "Guzman",
-         address: "C. Independencia 34, Centro, Colima",
-         password: "123456"
-     },
-     {
-         email: "meche33@gmail.com",
-         firstName: "Mercedes",
-         lastName: "Amezcua",
-         address: "C. Reforma 567, Centro, Colima",
-         password: "654321"
-     }
- ]
+  
 
   public ColaboradoresEntity = {
     tag: 'colaboradores',
@@ -37,31 +22,36 @@ export class ColaboradoresService {
             name: 'email',
             display: 'Email',
             inputType: 'email',
-            value:''
+            value:'',
+            visible: true
           },
           {
             name: 'firstName',
             display: 'Nombre/s',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: false
           },
           {
             name: 'lastName',
             display: 'Apellido/s',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: false
           },
           {
             name: 'address',
             display: 'Dirección',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: false
           },
           {
               name: 'password',
               display: 'Constraseña',
               inputType: 'password',
-              value:''
+              value:'',
+              visible: false
           },
         ]
     }

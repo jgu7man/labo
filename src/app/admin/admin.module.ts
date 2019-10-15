@@ -17,6 +17,8 @@ import { MxAdminsComponent } from './components/panel/mx-admins/mx-admins.compon
 import { MxTableComponent } from './components/panel/mx-table/mx-table.component';
 import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-agregar-form.component';
 import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component';
+import { MxInfoComponent } from './components/panel/mx-info/mx-info.component';
+import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component
     MxTableComponent,
     MxAgregarFormComponent,
     MxListaComponent,
+    MxInfoComponent,
+    MxEditFormComponent,
   ],
   imports: [
     BrowserModule,

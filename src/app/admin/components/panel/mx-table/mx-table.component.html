@@ -5,19 +5,19 @@
     <table>
         <thead>
             <tr>
-                <th *ngFor="let campo of tabla.inputs">
+                <th *ngFor="let campo of inputs">
                     {{campo.display}}
                 </th>
                 <th>OPCIONES</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let fila of DATA">
+            <tr *ngFor="let fila of DATA; index as i">
                 <td *ngFor="let col of fila">
                     {{col.value}}
                 </td>
                 <td class="options">
-                    <i class="fas waves-circle waves-effect fa-info-circle green-text"></i>
+                    <i [routerLink]="[i]" class="fas waves-circle waves-effect fa-info-circle green-text"></i>
                     <i class="fas waves-circle waves-effect fa-edit blue-text"></i>
                     <i class="fas waves-circle waves-effect fa-trash red-text"></i>
                 </td>

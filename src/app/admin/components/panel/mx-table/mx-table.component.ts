@@ -13,6 +13,7 @@ export class MxTableComponent implements OnInit, OnChanges {
   @Input() currentTabla: string
   public tabla
   public DATA = []
+  public inputs = []
   constructor(
     private _ruta: ActivatedRoute,
     private _entidades: EntidadesService,
@@ -23,13 +24,20 @@ export class MxTableComponent implements OnInit, OnChanges {
   }
 
   async ngOnChanges(changes: SimpleChanges) {
-    var entidades = await this._entidades.getCurrentEntity(this.currentTabla)
-    this.tabla = entidades
+    this.inputs = []
+
+    var entidad = await this._entidades.getCurrentEntity(this.currentTabla)
+    this.tabla = entidad
+    entidad.inputs.forEach(input => {
+      if (input.visible) {
+        this.inputs.push(input)
+      }
+    })
     this.getDATA(this.currentTabla)
   }
 
   getDATA(tabla) {
-    this._entidades.getDATA(tabla).then(res => {
+    this._entidades.getVisibleDATA(tabla).then(res => {
       this.DATA = res
     })
   }

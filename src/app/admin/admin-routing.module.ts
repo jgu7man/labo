@@ -9,6 +9,8 @@ import { MxAdminsComponent } from './components/panel/mx-admins/mx-admins.compon
 import { MxAgregarFormComponent } from './components/panel/mx-agregar-form/mx-agregar-form.component';
 import { MxTableComponent } from './components/panel/mx-table/mx-table.component';
 import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component';
+import { MxInfoComponent } from './components/panel/mx-info/mx-info.component';
+import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-form.component';
 
 
 const routes: Routes = [
@@ -19,9 +21,11 @@ const routes: Routes = [
         path: 'panel', component: PanelComponent, children: [
           { path: '', component: MxDashboardComponent },
           { path: 'dashboard', component: MxDashboardComponent },
-          { path: 'agregar/:entity', component: MxAgregarFormComponent},
+          { path: 'agregar/:entity', component: MxAgregarFormComponent },
+          { path: 'editar/:entity/:id', component: MxEditFormComponent },
           { path: 'admins', component: MxAdminsComponent, data: { tag: 'admins' } },
-          { path: 'lista/:tabla', component: MxListaComponent}
+          { path: 'lista/:tabla', component: MxListaComponent },
+          { path: 'lista/:tabla/:id', component: MxInfoComponent }
       ]}
   ]}
 ];

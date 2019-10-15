@@ -12,11 +12,7 @@
 
 select {
     display: block !important;
-    /* width: auto !important;
-    height: 40px !important;
-    opacity: 1 !important;
-    pointer-events: visible !important;
-    top: -30px !important; */
+    border: 1px solid #761f87 !important;
 }
 
 label,
@@ -29,5 +25,5 @@ h5,
 h6,
 th,
 td {
-    color: #761f87;
+    color: #761f87 !important;
 }

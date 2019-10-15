@@ -7,26 +7,11 @@ export class CategoriasService {
 
   constructor() { }
 
-  async getCategorias() {
-    return this.DATA
-  }
+  // async getCategorias() {
+  //   return this.DATA
+  // }
 
-  DATA = [
-    {
-        codigo: "1",
-        name: "Lavado",
-        descripcion: "Todo lo que va a la lavadora",
-        comentario: "",
-        crearProducto: false
-    },
-    {
-        codigo: "2",
-        name: "Planchado",
-        descripcion: "Todo lo que se pasa por la plancha",
-        comentario: "",
-        crearProducto: false
-    }
-  ]
+  
 
 
   public CategoriasEntity = {
@@ -37,32 +22,37 @@ export class CategoriasService {
           {
             name: 'codigo',
             display: 'Código',
-            inputType: 'number',
-            value: 0
+            inputType: 'text',
+            value: '',
+            visible: false
           },
           {
             name: 'name',
             display: 'Nombre',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: true
           },
           {
             name: 'descripcion',
             display: 'Descripción',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: true
           },
           {
             name: 'comentario',
             display: 'Comentario',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: false
           },
           {
             name: 'crearProducto',
             display: 'Crear Producto de Categoría',
             inputType: 'checkbox',
-            value: false
+            value: false,
+            visible: false
           },
         ]
     }

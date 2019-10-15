@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { CategoriasService } from './categorias.service';
+import { DATAService } from './DATA.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,49 +8,17 @@ import { CategoriasService } from './categorias.service';
 export class ProductosService {
 
   public categorias = []
-  public unidadMedida = [
-    'kg (Kilogramos)',
-    'pz (Pieza)'
-  ]
+  public unidadMedida = ['kg','pz']
   constructor(
-    private _categorias: CategoriasService
+    private _DATA: DATAService
   ) {
-    this._categorias.getCategorias().then(res => {
-      console.log(res)
+    this._DATA.httpGetData('categorias').then(res => {
       res.forEach(cat => {
         this.categorias.push(cat.name)
       })
-      console.log(this.categorias)
     })
    }
   
-
-  async getProductos() {
-    return this.DATA
-  }
-
-  DATA = [{
-        codigo: "1",
-        name: "Lavado de ropa",
-        descripcion: "Lavado de ropa",
-        unidad: "kg",
-        precio: 10,
-        categoria: "lavado",
-        activar: true,
-        imagen: ""
-    },
-    {
-        codigo: "2",
-        name: "Lavado de edredón",
-        descripcion: "Lavado de edredón",
-        unidad: "pz",
-        precio: 35,
-        categoria: "lavado",
-        activar: true,
-        imagen: ""
-    }
-]
-
 
   public ProductosEntity = {
     tag: 'productos',
@@ -60,49 +29,57 @@ export class ProductosService {
             name: 'codigo',
             display: 'Código',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: false
           },
           {
             name: 'name',
             display: 'Nombre',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: true
           },
           {
             name: 'descripcion',
             display: 'Descripción',
             inputType: 'text',
-            value:''
+            value:'',
+            visible: true
           },
           {
             name: 'unidad',
             display: 'Unidad de medida',
             inputType: 'select',
-            value: this.unidadMedida
+            value: this.unidadMedida,
+            visible: false
           },
           {
             name: 'precio',
             display: 'Precio Unitario',
             inputType: 'number',
-            value:0
+            value:0,
+            visible: false
           },
           {
             name: 'categoria',
             display: 'Precio Unitario',
             inputType: 'select',
-            value: this.categorias
+            value: this.categorias,
+            visible: false
           },
           {
             name: 'activar',
             display: 'Activar / Desactivar',
             inputType: 'checkbox',
-            value: false
+            value: false,
+            visible: false
           },
           {
             name: 'imagen',
             display: 'Image Producto',
             inputType: 'file',
-            value: ''
+            value: '',
+            visible: true
           },
         ]
     }
