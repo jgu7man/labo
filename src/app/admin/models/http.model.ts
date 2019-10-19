@@ -1,0 +1,1 @@
+export var HttpApi = 'https://zaisor.com/labo_api/'

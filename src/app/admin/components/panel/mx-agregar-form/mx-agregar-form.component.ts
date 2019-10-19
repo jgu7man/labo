@@ -31,6 +31,7 @@ export class MxAgregarFormComponent implements OnInit {
       this.currentTabla = data['entity']
     })
     this.tabla = await this._entidades.getCurrentEntity(this.currentTabla)
+    console.log(this.tabla)
     this.tabla.inputs.forEach(input => {
       if (input.opcional || input.turnOpciones) {
         this.inputsOpcionales.push(input)
@@ -40,6 +41,11 @@ export class MxAgregarFormComponent implements OnInit {
     })
     this.tableName = this.tabla.singleName
   }
+
+  objectValues(objeto: any) {
+   const Values = Object.values(objeto);
+   return Values;
+}
 
   turnOpciones(inputClicked) {
     var input = this.inputsOpcionales.find(input => input.name === inputClicked)
@@ -54,9 +60,18 @@ export class MxAgregarFormComponent implements OnInit {
         {value: input.value,enumerable: true,configurable: true,writable: true}
       )
     })
-    this._entidades.saveData(this.currentTabla, this.model)
+    this._entidades.saveData(this.currentTabla, this.model).subscribe(
+      response => {
+        console.log(response)
+        this._loaction.back()
+      },
+      error => {
+        console.log(<any>error)
+        alert(error.error)
+      }
+    )
     
-    this._loaction.back()
+    
     
   }
 

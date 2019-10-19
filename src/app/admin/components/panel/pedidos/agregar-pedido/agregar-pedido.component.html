@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="row">
+            <div class="col s12">
+                <h4>AGREGAR PEDIDO</h4>
+            </div>
+        </div>
+        <div class="row">
+            <form action="#" method="post" onsubmit="return false">
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Nombre" #Nombre="ngModel" id="Nombre" name="Nombre" type="text"> <label for="Nombre">Nombre</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Apellido" #Apellido="ngModel" id="Apellido" name="Apellido" type="text"> <label for="Apellido">Apellido</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Email" #Email="ngModel" id="Email" name="Email" type="text"> <label for="Email">Email</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Telefono" #Telefono="ngModel" id="Telefono" name="Telefono" type="text"> <label for="Telefono">Teléfono</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Direccion" #Direccion="ngModel" id="Direccion" name="Direccion" type="text"> <label for="Direccion">Dirección</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.FechaRecoleccion" #FechaRecoleccion="ngModel" id="FechaRecoleccion" name="FechaRecoleccion" type="text"> <label for="FechaRecoleccion">Fecha de Recolección</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.IdHorarioRecoleccion" #IdHorarioRecoleccion="ngModel" id="IdHorarioRecoleccion" name="IdHorarioRecoleccion" type="text"> <label for="IdHorarioRecoleccion">Id Horario de Recoleccion</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Latitud_Cliente" #Latitud_Cliente="ngModel" id="Latitud_Cliente" name="Latitud_Cliente" type="number"> <label for="Latitud_Cliente">Latitud del Cliente</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Longitud_Cliente" #Longitud_Cliente="ngModel" id="Longitud_Cliente" name="Longitud_Cliente" type="text"> <label for="Longitud_Cliente">Longitud de Cliente</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input [(ngModel)]="pedido.Ref_Pago_Tarjeta" #Ref_Pago_Tarjeta="ngModel" id="Ref_Pago_Tarjeta" name="Ref_Pago_Tarjeta" type="text"> <label for="Ref_Pago_Tarjeta">Referencia Pago con Tarjeta</label>
+                </div>
+                <div class="col s6 ordenForm">
+                    <div class="col s12 input-field">
+                        <input [(ngModel)]="detalle.IdCategoria" #IdCategoria="ngModel" id="IdCategoria" name="IdCategoria" type="text"> <label for="IdCategoria">IdCategoria</label>
+                    </div>
+                    <div class="col s12 input-field">
+                        <input [(ngModel)]="detalle.IdServicio" #IdServicio="ngModel" id="IdServicio" name="IdServicio" type="text"> <label for="IdServicio">IdServicio</label>
+                    </div>
+                    <div class="col s12 input-field">
+                        <input [(ngModel)]="detalle.Cantidad" #Cantidad="ngModel" id="Cantidad" name="Cantidad" type="text"> <label for="Cantidad">Cantidad</label>
+                    </div>
+                    <div class="col s12 input-field">
+                        <input [(ngModel)]="detalle.UnidadMedida" #UnidadMedida="ngModel" id="UnidadMedida" name="UnidadMedida" type="text"> <label for="UnidadMedida">UnidadMedida</label>
+                    </div>
+                    <div class="col s12 input-field">
+                        <input [(ngModel)]="detalle.Precio" #Precio="ngModel" id="Precio" name="Precio" type="text"> <label for="Precio">Precio</label>
+                    </div>
+                    <div class="col s12">
+                        <button class="btn primary center" (click)="addDetalle()">Agregar Detalle</button>
+                    </div>
+                </div>
+                <div class="col s6 OrdenDetalles">
+                    <div class="detalle" *ngFor="let detalle of pedido.Detalle_Orden">
+                        <ul>
+                            <li>IdCategoria: {{detalle.IdCategoria}}</li>
+                            <li>IdServicio: {{detalle.IdServicio}}</li>
+                            <li>Cantidad: {{detalle.Cantidad}}</li>
+                            <li>UnidadMedida: {{detalle.UnidadMedida}}</li>
+                            <li>Precio: ${{detalle.Precio}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <button class="btn primary center" (click)="savePedido()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

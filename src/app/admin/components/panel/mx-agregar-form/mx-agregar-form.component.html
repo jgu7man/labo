@@ -18,8 +18,8 @@
                     <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
                         <label for="{{item.name}}">{{item.display}}</label>
                         <select #select name="item.name" id="item.name" [(ngModel)]="item.value">
-                            <option *ngFor="let option of item.value"
-                                value="{{option}}">
+                            <option *ngFor="let option of objectValues(item.value)"
+                                [value]=option>
                                 {{option}}
                             </option>
                         </select>

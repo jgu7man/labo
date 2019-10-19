@@ -11,6 +11,8 @@ import { MxTableComponent } from './components/panel/mx-table/mx-table.component
 import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component';
 import { MxInfoComponent } from './components/panel/mx-info/mx-info.component';
 import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-form.component';
+import { PedidosComponent } from './components/panel/pedidos/pedidos.component';
+import { AgregarPedidoComponent } from './components/panel/pedidos/agregar-pedido/agregar-pedido.component';
 
 
 const routes: Routes = [
@@ -19,13 +21,15 @@ const routes: Routes = [
       { path: '', redirectTo: 'panel', pathMatch: 'full'},
       { path: 'login', component: LoginComponent },
       { path: 'panel', component: PanelComponent, children: [
-          { path: '', component: MxDashboardComponent },
-          { path: 'dashboard', component: MxDashboardComponent },
-          { path: 'agregar/:entity', component: MxAgregarFormComponent },
-          { path: 'editar/:entity/:id', component: MxEditFormComponent },
-          { path: 'admins', component: MxAdminsComponent, data: { tag: 'admins' } },
-          { path: 'lista/:tabla', component: MxListaComponent },
-          { path: 'lista/:tabla/:id', component: MxInfoComponent }
+        { path: '', component: MxDashboardComponent },
+        { path: 'dashboard', component: MxDashboardComponent },
+        { path: 'agregar/:entity', component: MxAgregarFormComponent },
+        { path: 'editar/:entity/:id', component: MxEditFormComponent },
+        { path: 'lista/:tabla', component: MxListaComponent },
+        { path: 'lista/:tabla/:id', component: MxInfoComponent },
+        { path: 'admins', component: MxAdminsComponent, data: { tag: 'admins' } },
+        { path: 'pedidos', component: PedidosComponent, data: { tag: 'pedidos' } },
+        { path: 'pedidos/agregar', component: AgregarPedidoComponent}
       ]}
   ]}
 ];

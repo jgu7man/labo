@@ -1,0 +1,14 @@
+.OrdenDetalles {
+    min-height: 50vh;
+    border: 1px solid;
+}
+
+.detalle {
+    background: #ccc;
+    padding: 0 .5em;
+    margin: 0 0 .5em 0;
+}
+
+.btn {
+    margin: 1em 1em 3em !important;
+}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminModel } from '../../models/admin.model';
-import { ColaboradoresService } from '../../services/colaboradores.service';
 import { Router } from '@angular/router';
+import { LoginModel } from '../../models/login.model';
+import { AuthService } from '../../services/auth.service';
+import * as crypto from "crypto-js";
 
 @Component({
   selector: 'app-login',
@@ -10,24 +11,41 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public admin: AdminModel
+  public user: LoginModel
+  public error
   constructor(
-    private _colaboradores: ColaboradoresService,
-    private router: Router
+    private router: Router,
+    private _auth: AuthService
   ) {
-    this.admin = new AdminModel('','','','','');
+    this.user = new LoginModel(1,'','');
    }
 
   ngOnInit() {
-    var u = JSON.parse(localStorage.getItem('lasmotosSes'))
-    if (u != null || u != undefined) {
-      this.router.navigate(['/admin'])
-      console.log("el Admin ya inicio sesión")
+    // var u = JSON.parse(localStorage.getItem('lasmotosSes'))
+    // if (u != null || u != undefined) {
+    //   this.router.navigate(['/admin'])
+    //   console.log("el Admin ya inicio sesión")
+    // }
+  }
+
+  cryptPwd(pwd) {
+    try {
+      return crypto.AES.encrypt(pwd, 'Contrasena').toString()
+    } catch (error) {
+      console.log(error)
     }
   }
 
-  onSubmit(){
-    // this._colaboradores.login(this.admin.email, this.admin.contra)
+  async onSubmit() {
+    const pwd = await this.cryptPwd(this.user.Contrasena)
+    this.user.Contrasena = pwd
+
+    this._auth.AutenticarUsuario(this.user).subscribe(res => {
+      if (res.error) {
+        console.log(res)
+        this.error = res.error.error
+      }
+    })
   }
 
 }

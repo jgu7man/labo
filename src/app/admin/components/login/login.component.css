@@ -29,6 +29,13 @@ input[type=email]:not(.browser-default):focus:not([readonly]) {
     box-shadow: 0 1px 0 0 #fff !important;
 }
 
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default) {
+    border-bottom: 1px solid #ffffff !important;
+    color: #fff;
+}
+
 input:not([type]):focus:not([readonly])+label,
 input[type=text]:not(.browser-default):focus:not([readonly])+label,
 input[type=password]:not(.browser-default):focus:not([readonly])+label,
@@ -40,7 +47,6 @@ input[type=email]:not(.browser-default):focus:not([readonly])+label {
     color: #fff !important
 }
 
-
-/* input {
+input {
     color: #fff !important;
-} */
+}

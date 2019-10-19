@@ -12,38 +12,93 @@ export class PedidosService {
     tag: 'pedidos',
     tableName: 'pedidos',
     singleName: 'pedido',
-        inputs: [
-          {
-            name: 'email',
-            display: 'Email',
-            inputType: 'email',
-            value:''
-          },
-          {
-            name: 'firstName',
-            display: 'Nombre/s',
-            inputType: 'text',
-            value:''
-          },
-          {
-            name: 'lastName',
-            display: 'Apellido/s',
-            inputType: 'text',
-            value:''
-          },
-          {
-            name: 'address',
-            display: 'Dirección',
-            inputType: 'text',
-            value:''
-          },
-          {
-            name: 'password',
-            display: 'Constraseña',
-            inputType: 'password',
-            value:''
-          },
-        ]
-    }
+    inputs: [
+      {
+        name: 'idCliente',
+        display: 'idCliente',
+        inputType: 'hidden',
+        value: 1,
+        visible: false
+      },
+      {
+        name: 'Nombre',
+        display: 'Nombre',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'Apellido',
+        display: 'Apellido',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'Email',
+        display: 'Email',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'Telefono',
+        display: 'Teléfono',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'Direccion',
+        display: 'Dirección',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'FechaRecoleccion',
+        display: 'Fecha de Recolección',
+        inputType: 'text',
+        value: '',
+        visible: true
+      },
+      {
+        name: 'IdHorarioRecoleccion',
+        display: 'Id Horario de Recoleccion',
+        inputType: 'number',
+        value: 0,
+        visible: false
+      },
+      {
+        name: 'Latitud_Cliente',
+        display: 'Latitud del Cliente',
+        inputType: 'number',
+        value: 0,
+        visible: false
+      },
+      {
+        name: 'Longitud_Cliente',
+        display: 'Longitud del Cliente',
+        inputType: 'number',
+        value: 0,
+        visible: false
+      },
+      {
+        name: 'Ref_Pago_Tarjeta',
+        display: 'Referencia de Pago de Tarjeta',
+        inputType: 'number',
+        value: 0,
+        visible: false
+      },
+      {
+        name: 'Detalle_Orden',
+        display: 'Detalle de Orden',
+        inputType: 'popup',
+        value: [],
+        visible: false,
+        popup: true
+      },
+    ]
+  }
   
 }

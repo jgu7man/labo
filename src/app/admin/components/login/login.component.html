@@ -5,18 +5,23 @@
                 <div class="col s12">
                     <h5 class="center white-text">INICIAR SESIÓN</h5>
                 </div>
-                <div class="col s12 input-field">
-                    <input type="email" name="email" id="email" [(ngModel)]="admin.email" #email="ngModel" />
-                    <label for="email">Email</label>
+                <div class="col s12 input-field white-text">
+                    <input type="email" name="Usuario" id="Usuario" [(ngModel)]="user.Usuario" #Usuario="ngModel" />
+                    <label for="Usuario">Email</label>
                 </div>
-                <div class="col s12 input-field">
-                    <input type="password" name="contra" id="contra" [(ngModel)]="admin.contra" #contra="ngModel" />
-                    <label for="contra">Contraseña</label>
+                <div class="col s12 input-field white-text">
+                    <input type="password" name="Contrasena" id="Contrasena" [(ngModel)]="user.Contrasena" #Contrasena="ngModel" PwdToggle />
+                    <label for="Contrasena">Contraseña</label>
                 </div>
                 <div class="col s12 center">
-                    <input type="submit" class="btn  white primary-text" value="Entrar" />
+                    <input type="submit" style="color: #761f87 !important" class="btn  white primary-text" value="Entrar" />
                 </div>
             </div>
         </form>
+    </div>
+    <div *ngIf="error">
+        <div class="col s12 center">
+            <p class="red-text">{{error}}</p>
+        </div>
     </div>
 </div>

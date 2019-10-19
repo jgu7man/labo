@@ -20,6 +20,8 @@ import { MxListaComponent } from './components/panel/mx-lista/mx-lista.component
 import { MxInfoComponent } from './components/panel/mx-info/mx-info.component';
 import { MxEditFormComponent } from './components/panel/mx-edit-form/mx-edit-form.component';
 import { MxDeletePopupComponent } from './components/panel/mx-delete-popup/mx-delete-popup.component';
+import { PedidosComponent } from './components/panel/pedidos/pedidos.component';
+import { AgregarPedidoComponent } from './components/panel/pedidos/agregar-pedido/agregar-pedido.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { MxDeletePopupComponent } from './components/panel/mx-delete-popup/mx-de
     MxInfoComponent,
     MxEditFormComponent,
     MxDeletePopupComponent,
+    PedidosComponent,
+    AgregarPedidoComponent,
   ],
   imports: [
     BrowserModule,

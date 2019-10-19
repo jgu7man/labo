@@ -1,0 +1,145 @@
+{
+    "info": {
+        "_postman_id": "20d1c35a-9110-4a40-839b-a13c59fd6fde",
+        "name": "LaboApp",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+            "name": "01 Agrega Usuario Rol Cliente",
+            "request": {
+                "method": "POST",
+                "header": [{
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                }],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"id_cliente\":1,\n\t\"Usuario\":\"admin\",\n\t\"Password\":\"micontraseña\",\n\t\"Nombre\":\"Administrador\",\n\t\"Apellido\":\"General\",\n\t\"Email\":\"pedro.vargas@zaisor.com\",\n\t\"Direccion\":\"EN algun lugar del mundo\",\n\t\"Telefono\":\"1234567890\",\n\t\"Ciudad\":\"MExico\",\n\t\"Rol\":1\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:41913/usuarios/agregar",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "41913",
+                    "path": [
+                        "usuarios",
+                        "agregar"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "02 Agregar Usuario Rol Lavanderia",
+            "request": {
+                "method": "POST",
+                "header": [{
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                }],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"id_cliente\":1,\n\t\"Usuario\":\"lavanderia\",\n\t\"Password\":\"micontraseña\",\n\t\"Nombre\":\"Lavanderia\",\n\t\"Apellido\":\"Nueva\",\n\t\"Email\":\"correo@zaisor.com\",\n\t\"Direccion\":\"EN algun lugar del mundo\",\n\t\"Telefono\":\"1234567890\",\n\t\"Ciudad\":\"Madrid\",\n\t\"Latitud\":\"2,5588\",\n\t\"Longitud\":\"5,8845\",\n\t\"Rol\":2\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:41913/colaboradores/agregar",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "41913",
+                    "path": [
+                        "colaboradores",
+                        "agregar"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "03 Autenticar usuario",
+            "request": {
+                "method": "POST",
+                "header": [{
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                }],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"Aplicacion\":1,\n\t\"Usuario\":\"pedro.vargas@zaisor.com\",\n\t\"Contrasena\":\"123456789\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:41913/autenticacion/obtener",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "41913",
+                    "path": [
+                        "autenticacion",
+                        "obtener"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "04 Generar Orden",
+            "request": {
+                "method": "POST",
+                "header": [{
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                }],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n\t\"IdCliente\":1,\r\n\t\"Nombre\":\"Nombre\",\r\n\t\"Apellido\":\"Apellido\",\r\n\t\"Email\":\"correo@correo.com\",\r\n\t\"Telefono\":\"1234567890\",\r\n\t\"Direccion\":\"En algun lugar del mundo\",\r\n\t\"FechaRecoleccion\":\"20-10-2019\",\r\n\t\"IdHorarioRecoleccion\":1,\r\n\t\"Latitud_Cliente\":\"5,887865\",\r\n\t\"Longitud_Cliente\":\"3,557899\",\r\n\t\"Ref_Pago_Tarjeta\":\"\",\r\n\t\"Detalle_Orden\":[\r\n\t\t{\r\n\t\t\t\"IdCategoria\":1,\r\n\t\t\t\"IdServicio\":1,\r\n\t\t\t\"Cantidad\":2,\r\n\t\t\t\"UnidadMedida\":1,\r\n\t\t\t\"Precio\":25.30\r\n\t\t}\r\n\t]\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:41913/pedidos/agregar",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "41913",
+                    "path": [
+                        "pedidos",
+                        "agregar"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}

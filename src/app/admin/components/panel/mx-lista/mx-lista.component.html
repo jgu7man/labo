@@ -1,4 +1,9 @@
 <div class="admin-container">
     <h4>{{listaName.toUpperCase()}}</h4>
+    <div class="col s12 right">
+        <button class="btn primary" [routerLink]="['/admin/panel/agregar/', listaName]">
+            AGREGAR
+        </button>
+    </div>
     <mx-table [currentTabla]="listaName"></mx-table>
 </div>

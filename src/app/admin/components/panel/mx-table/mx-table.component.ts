@@ -21,7 +21,23 @@ export class MxTableComponent implements OnInit, OnChanges {
   ) {}
 
   async ngOnInit() {
-    
+    this._ruta.data.subscribe(async data => {
+      if (Object.keys(data).length != 0) {
+        this.currentTabla = data.tag
+        this.inputs = []
+
+        var entidad = await this._entidades.getCurrentEntity(this.currentTabla)
+        this.tabla = entidad
+        entidad.inputs.forEach(input => {
+          if (input.visible) {
+            this.inputs.push(input)
+          }
+        })
+        this.getDATA(this.currentTabla)
+      } else {
+        console.log(' no hay')
+      }
+    })
   }
 
   async ngOnChanges(changes: SimpleChanges) {
