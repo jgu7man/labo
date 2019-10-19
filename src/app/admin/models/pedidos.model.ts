@@ -14,12 +14,5 @@ export class PedidosModel{
         public Detalle_Orden: object[],
     ) { }
     
-    detalle = {
-        IdCategoria: 0,
-        IdServicio: 0,
-        Cantidad: 0,
-        UnidadMedida: 0,
-        Precio: 0,
-    }
 }
     
