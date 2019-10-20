@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidosModel } from '../../../../models/pedidos.model';
 import { DetalleOrdenModel } from '../../../../models/DetalleOrden.Model';
-import { EntidadesService } from '../../../../services/entidades.service';
 import { Location } from '@angular/common';
+import { PedidosService } from '../../../../services/pedidos.service';
 
 @Component({
   selector: 'agregar-pedido',
@@ -14,7 +14,7 @@ export class AgregarPedidoComponent implements OnInit {
   public pedido: PedidosModel
   public detalle: DetalleOrdenModel
   constructor(
-    private _entidades: EntidadesService,
+    private _pedidos: PedidosService,
     private _location: Location
   ) {
     this.pedido = new PedidosModel(1, '', '', '', '', '', '', '', 0, 0, 0, [])
@@ -39,7 +39,7 @@ export class AgregarPedidoComponent implements OnInit {
   }
 
   savePedido() {
-    this._entidades.saveData('pedidos', this.pedido).subscribe(
+    this._pedidos.generarPedido('pedidos', this.pedido).subscribe(
       response => {
         console.log(response)
         this._location.back()

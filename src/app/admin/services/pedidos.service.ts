@@ -1,11 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpApi } from "../models/http.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidosService {
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
+
+  generarPedido(currentTabla: string, data: any): Observable<any> {
+    console.log(currentTabla)
+    console.log(data)
+    var body = JSON.stringify(data)
+    var headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this._http.post(HttpApi+`${currentTabla}/generar`, body, {headers: headers})
+  }
 
 
   public PedidosEntity = {

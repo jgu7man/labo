@@ -106,4 +106,6 @@ export class EntidadesService {
     var headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this._http.post(HttpApi+`${currentTabla}/agregar`, body, {headers: headers})
   }
+
+  
 }

@@ -68,6 +68,13 @@
     right: 0 !important;
 }
 
+@media screen and (min-width: 450px) {
+    #nav-mobile {
+        right: -5em;
+        position: relative;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .navbar {
         width: 100vw;
