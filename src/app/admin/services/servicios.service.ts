@@ -5,7 +5,7 @@ import { DATAService } from './DATA.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductosService {
+export class ServiciosService {
 
   public categorias = []
   public unidadMedida = ['kg','pz']
@@ -20,24 +20,17 @@ export class ProductosService {
    }
   
 
-  public ProductosEntity = {
-    tag: 'productos',
-    tableName: 'productos',
-    singleName: 'producto',
+  public ServiciosEntity = {
+    tag: 'servicios',
+    tableName: 'servicios',
+    singleName: 'servicio',
         inputs: [
           {
-            name: 'codigo',
-            display: 'Código',
-            inputType: 'text',
-            value:'',
+            name: 'categoria',
+            display: 'Categorias',
+            inputType: 'select',
+            value: this.categorias,
             visible: false
-          },
-          {
-            name: 'name',
-            display: 'Nombre',
-            inputType: 'text',
-            value:'',
-            visible: true
           },
           {
             name: 'descripcion',
@@ -47,7 +40,7 @@ export class ProductosService {
             visible: true
           },
           {
-            name: 'unidad',
+            name: 'unidadmedida',
             display: 'Unidad de medida',
             inputType: 'select',
             value: this.unidadMedida,
@@ -60,15 +53,9 @@ export class ProductosService {
             value:0,
             visible: false
           },
+          
           {
-            name: 'categoria',
-            display: 'Precio Unitario',
-            inputType: 'select',
-            value: this.categorias,
-            visible: false
-          },
-          {
-            name: 'activar',
+            name: 'status',
             display: 'Activar / Desactivar',
             inputType: 'checkbox',
             value: false,
