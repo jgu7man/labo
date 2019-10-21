@@ -39,13 +39,13 @@ export class MxAgregarFormComponent implements OnInit {
         this.inputs.push(input)
       }
     })
+    console.log(this.inputsOpcionales, this.inputs)
     this.tableName = this.tabla.singleName
   }
 
-  objectValues(objeto: any) {
-   const Values = Object.values(objeto);
-   return Values;
-}
+  selected(option) {
+    return option
+  }
 
   turnOpciones(inputClicked) {
     var input = this.inputsOpcionales.find(input => input.name === inputClicked)

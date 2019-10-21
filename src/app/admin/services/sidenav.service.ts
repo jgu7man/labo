@@ -36,21 +36,27 @@ export class SidenavService {
       ]
     },
     {
-      id: 'prod_cat',
-      display: 'productos y categorías',
+      id: 'serv_cat',
+      display: 'servicios y categorías',
       icon: 'fa-box-open',
       link:'lista',
       submenu: [
         {
-          id: 'productos',
-          display: 'productos',
+          id: 'servicios',
+          display: 'servicios',
           icon: 'fa-box',
-          link:'productos',
+          link:'servicios',
         },{
           id: 'categorias',
           display: 'categorías',
           icon: 'fa-boxes',
           link:'categorias',
+        },
+        {
+          id: 'unidadmedida',
+          display: 'Unidad de medida',
+          icon: 'fa-balance-scale',
+          link:'unidadmedida',
         },
       ]
     },

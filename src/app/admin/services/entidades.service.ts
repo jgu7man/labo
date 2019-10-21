@@ -3,12 +3,13 @@ import { Injectable } from "@angular/core";
 import { ColaboradoresService } from './colaboradores.service';
 import { UsuariosService } from './usuarios.service';
 import { CategoriasService } from './categorias.service';
-import { ProductosService } from './productos.service';
+import { ServiciosService } from './servicios.service';
 import { DATAService } from './DATA.service';
 import { HttpApi } from "../models/http.model";
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { PedidosService } from './pedidos.service';
+import { UnidadMedidaService } from './unidadMedida.service';
 
 @Injectable({ providedIn: 'root' })
 export class EntidadesService {
@@ -24,15 +25,17 @@ export class EntidadesService {
     private _colaboradores: ColaboradoresService,
     private _usuarios: UsuariosService,
     private _categorias: CategoriasService,
-    private _productos: ProductosService,
+    private _servicios: ServiciosService,
     private _pedidos: PedidosService,
+    private _unidadMedida: UnidadMedidaService,
     ) {
         this.entidades.push(
           _colaboradores.ColaboradoresEntity,
           _usuarios.UsuariosEntity,
           _categorias.CategoriasEntity,
-          _productos.ProductosEntity,
-          _pedidos.PedidosEntity
+          _servicios.ServiciosEntity,
+          _pedidos.PedidosEntity,
+          _unidadMedida.unidadMedidaEntity
         )
     }
 
@@ -51,10 +54,15 @@ export class EntidadesService {
   }
 
   async getVisibleDATA(tabla) {
-    var data = await this._DATA.httpGetData(tabla)
-    var dataFiltrada = await this.getVisibleFields(tabla, data)
-    var docs = await this.arrayDATA(dataFiltrada)
-
+    var docs
+    await this.getData(tabla).subscribe(async data => {
+      console.log(data)
+      var dataFiltrada = await this.getVisibleFields(tabla, data)
+      var docs = await this.arrayDATA(dataFiltrada)
+      return docs
+    })
+    // var data = await this._DATA.httpGetData(tabla)
+    console.log(docs)
     return docs
   }
   
@@ -100,11 +108,14 @@ export class EntidadesService {
   }
 
   saveData(currentTabla: string, data: any): Observable<any> {
-    console.log(currentTabla)
-    console.log(data)
     var body = JSON.stringify(data)
     var headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this._http.post(HttpApi+`${currentTabla}/agregar`, body, {headers: headers})
+  }
+
+  getData(currentTabla: string): Observable<any> {
+    var headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this._http.get(HttpApi+`${currentTabla}/mostrar`, {headers: headers})
   }
 
   
