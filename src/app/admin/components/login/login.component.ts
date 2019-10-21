@@ -36,17 +36,19 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  close() {
+    $(".error").slideToggle()
+  }
+
   async onSubmit() {
     const pwd = await this.cryptPwd(this.user.Contrasena)
     this.user.Contrasena = pwd
 
     this._auth.AutenticarUsuario(this.user).subscribe(res => {
-      if (res.error) {
-        console.log(res)
-        this.error = res.error.error
-      }
-    },(error)=>{
-      console.log("error mostrar", error.error.error);
+      this.router.navigate(['../'])
+    }, (error) => {
+        $(".error").slideToggle()
+      this.error = error.error.error
     })
   }
 
