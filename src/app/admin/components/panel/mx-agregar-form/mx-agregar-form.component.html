@@ -17,10 +17,10 @@
                 <ng-template #selectInput>
                     <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
                         <label for="{{item.name}}">{{item.display}}</label>
-                        <select #select name="item.name" id="item.name" [(ngModel)]="item.value">
-                            <option *ngFor="let option of objectValues(item.value)"
-                                [value]=option>
-                                {{option}}
+                        <select #select (change)="selected($event)" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.name">
+                            <option *ngFor="let option of item.value | keyvalue"
+                                [value]=option.value>
+                                {{option.value}}
                             </option>
                         </select>
                     </div>
@@ -59,10 +59,10 @@
                         <ng-template #selectInput>
                             <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
                                 <label for="{{item.name}}">{{item.display}}</label>
-                                <select #select name="item.name" id="item.name" [(ngModel)]="item.value">
-                                    <option *ngFor="let option of item.value"
-                                        value="{{option}}">
-                                        {{option}}
+                                <select #select [name]="item.name" [id]="item.name" [(ngModel)]="item.value">
+                                    <option *ngFor="let option of item.value | keyvalue"
+                                        value="{{option.value}}">
+                                        {{option.value}}
                                     </option>
                                 </select>
                             </div>
