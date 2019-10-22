@@ -40,10 +40,7 @@ export class EntidadesService {
     }
 
   async getCurrentEntity(currentEntity) {
-    console.log(currentEntity)
-    console.log(this.entidades)
     this.entidad = await this.entidades.find(entidad => entidad.tag === currentEntity)
-    console.log(this.entidad)
       return this.entidad
   }
 
@@ -53,19 +50,22 @@ export class EntidadesService {
     return doc
   }
 
+  DATOS
   async getVisibleDATA(tabla) {
     var docs
-    await this.getData(tabla).subscribe(async data => {
+    const waitFor = (ms) => new Promise(r => setTimeout(r, ms));
+    this.getData(tabla).subscribe(async data => {
       console.log(data)
       var dataFiltrada = await this.getVisibleFields(tabla, data)
       var docs = await this.arrayDATA(dataFiltrada)
-      return docs
+      this.DATOS = docs
     })
     // var data = await this._DATA.httpGetData(tabla)
-    console.log(docs)
-    return docs
+    await waitFor(2000)
+    
+    return this.DATOS
   }
-  
+
   async getVisibleFields(currentEntity, data) {
     this.entidad = await this.entidades.find(entidad => entidad.tag === currentEntity)
     var visibleFields = []
@@ -79,7 +79,7 @@ export class EntidadesService {
             configurable: true,
             enumerable: true
           })
-        }
+        } 
       })
       visibleFields.push(newDoc)
     })

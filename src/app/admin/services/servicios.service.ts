@@ -24,51 +24,51 @@ export class ServiciosService {
     tag: 'servicios',
     tableName: 'servicios',
     singleName: 'servicio',
-        inputs: [
-          {
-            name: 'categoria',
-            display: 'Categorias',
-            inputType: 'select',
-            value: this.categorias,
-            visible: false
-          },
-          {
-            name: 'descripcion',
-            display: 'Descripción',
-            inputType: 'text',
-            value:'',
-            visible: true
-          },
-          {
-            name: 'unidadmedida',
-            display: 'Unidad de medida',
-            inputType: 'select',
-            value: this.unidadMedida,
-            visible: false
-          },
-          {
-            name: 'precio',
-            display: 'Precio Unitario',
-            inputType: 'number',
-            value:0,
-            visible: false
-          },
-          
-          {
-            name: 'status',
-            display: 'Activar / Desactivar',
-            inputType: 'checkbox',
-            value: false,
-            visible: false
-          },
-          {
-            name: 'imagen',
-            display: 'Image Producto',
-            inputType: 'file',
-            value: '',
-            visible: true
-          },
-        ]
-    }
+    inputs: [
+      {
+        name: 'IdServicio',
+        display: 'Id',
+        inputType: 'number',
+        value:0,
+        visible: true
+      },
+      {
+        name: 'Descripcion',
+        display: 'Descripción',
+        inputType: 'text',
+        value:'',
+        visible: true
+      },
+      {
+        name: 'Descrip_Categoria',
+        display: 'Categorias',
+        inputType: 'select',
+        value: this.categorias,
+        visible: true
+      },
+      {
+        name: 'UnidadMedida',
+        display: 'Unidad de medida',
+        inputType: 'select',
+        value: this.unidadMedida,
+        visible: true
+      },
+      {
+        name: 'Precio',
+        display: 'Precio Unitario',
+        inputType: 'number',
+        value:0,
+        visible: true
+      },
+      {
+        name: 'Imagen_url',
+        display: 'Image Producto',
+        inputType: 'file',
+        value: '',
+        visible: 'imagen',
+        imgField: true
+      },
+    ]
+  }
   
 }

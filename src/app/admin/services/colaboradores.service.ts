@@ -33,7 +33,7 @@ export class ColaboradoresService {
         visible: true
       },
       {
-        name: 'password',
+        name: 'Password',
         display: 'Constraseña',
         inputType: 'password',
         value:'',
@@ -54,7 +54,7 @@ export class ColaboradoresService {
         visible: false
       },
       {
-        name: 'email',
+        name: 'Email',
         display: 'Email',
         inputType: 'email',
         value:'',

@@ -15,7 +15,7 @@ export class CategoriasService {
     singleName: 'categoria',
         inputs: [
           {
-            name: 'descripcion',
+            name: 'Descripcion',
             display: 'Descripción',
             inputType: 'text',
             value:'',

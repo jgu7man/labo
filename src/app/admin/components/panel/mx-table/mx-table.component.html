@@ -12,7 +12,13 @@
         <tbody>
             <tr *ngFor="let fila of DATA; index as i">
                 <td *ngFor="let col of fila">
-                    {{col.value}}
+                    <div class="img" *ngIf="col.key.includes('Imagen'); else noImg">
+                        <img [src]=col.value alt="">
+                    </div>
+                    <ng-template #noImg>
+                        <span>{{col.value}}</span>
+                    </ng-template>
+
                 </td>
                 <td class="options">
                     <i [routerLink]="[i]" class="fas waves-circle waves-effect fa-info-circle green-text"></i>

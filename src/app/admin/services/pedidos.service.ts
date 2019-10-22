@@ -11,11 +11,14 @@ export class PedidosService {
   constructor(private _http: HttpClient) { }
 
   generarPedido(currentTabla: string, data: any): Observable<any> {
-    console.log(currentTabla)
-    console.log(data)
     var body = JSON.stringify(data)
     var headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this._http.post(HttpApi+`${currentTabla}/generar`, body, {headers: headers})
+  }
+
+  getAllPedidos(currentTabla: string): Observable<any> {
+    var headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this._http.get(HttpApi+`${currentTabla}/mostrar`, {headers: headers})
   }
 
 
@@ -25,7 +28,7 @@ export class PedidosService {
     singleName: 'pedido',
     inputs: [
       {
-        name: 'idCliente',
+        name: 'IdCliente',
         display: 'idCliente',
         inputType: 'hidden',
         value: 1,
@@ -64,6 +67,13 @@ export class PedidosService {
         display: 'Dirección',
         inputType: 'text',
         value: '',
+        visible: false
+      },
+      {
+        name: 'FechaGeneracion',
+        display: 'Fecha de Generación',
+        inputType: 'text',
+        value: '',
         visible: true
       },
       {
@@ -71,7 +81,7 @@ export class PedidosService {
         display: 'Fecha de Recolección',
         inputType: 'text',
         value: '',
-        visible: true
+        visible: false
       },
       {
         name: 'IdHorarioRecoleccion',
@@ -107,7 +117,7 @@ export class PedidosService {
         inputType: 'popup',
         value: [],
         visible: false,
-        popup: true
+        popup: false
       },
     ]
   }

@@ -19,18 +19,18 @@ export class UnidadMedidaService {
     singleName: 'Unidad de medida',
         inputs: [
           {
-            name: 'descripcion',
+            name: 'Descripcion',
             display: 'Descripción',
             inputType: 'text',
             value:'',
             visible: true
           },
           {
-            name: 'codigo',
+            name: 'Codigo',
             display: 'Código',
             inputType: 'text',
             value: '',
-            visible: false
+            visible: true
           },
         ]
     }

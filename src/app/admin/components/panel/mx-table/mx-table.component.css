@@ -9,3 +9,11 @@
     width: 33.33333%;
     cursor: pointer;
 }
+
+.img {
+    width: 100px;
+}
+
+.img img {
+    width: 100%;
+}

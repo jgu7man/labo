@@ -35,7 +35,7 @@ export class MxTableComponent implements OnInit, OnChanges {
         })
         this.getDATA(this.currentTabla)
       } else {
-        console.log(' no hay')
+        console.log(' no hay data en la ruta')
       }
     })
   }
@@ -58,11 +58,12 @@ export class MxTableComponent implements OnInit, OnChanges {
     $('mx-delete-popup').fadeToggle()
   }
 
-  getDATA(tabla) {
-    this._entidades.getVisibleDATA(tabla).then(res => {
+  async getDATA(tabla) {
+    await this._entidades.getVisibleDATA(tabla).then(res => {
       this.DATA = res
+      console.log(this.DATA)
     })
-  }
+    }
 
   
 
