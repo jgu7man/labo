@@ -15,8 +15,8 @@ export class UsuariosService {
     singleName: 'usuario',
     inputs: [
           {
-            name: 'id_cliente',
-            display: 'id_cliente',
+            name: 'UsuarioID',
+            display: 'UsuarioID',
             inputType: 'hidden',
             value:1,
             visible: false
