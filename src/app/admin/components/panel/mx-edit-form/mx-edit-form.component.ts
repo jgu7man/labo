@@ -43,6 +43,10 @@ export class MxEditFormComponent implements OnInit {
     console.log(event)
   }
 
+  trackByFn(index, item) {
+    return index;
+  }
+
   onSubmit() {
     this.tabla.inputs.forEach(input => {
       Object.defineProperty(this.model, input.name, 

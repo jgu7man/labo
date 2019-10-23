@@ -4,6 +4,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule, } from "@angular/common/http";
+// import {  } from '@angular/common';
+
 import { CompareValidatorDirective } from "./directives/validator.directive";
 import { PwdToggleDirective } from "./directives/pwd-toggle.directive";
 
@@ -51,5 +53,8 @@ import { AgregarPedidoComponent } from './components/panel/pedidos/agregar-pedid
     FormsModule,
     AdminRoutingModule
   ],
+  providers: [
+        // { provide: NGFOR_TRACKBY_FN }
+    ],
 })
 export class AdminModule { }

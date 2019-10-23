@@ -54,6 +54,10 @@ export class MxAgregarFormComponent implements OnInit {
     $(".opcionales").slideToggle()
   }
 
+  trackByFn(index, item) {
+    return index;
+  }
+
   onSubmit() {
     this.tabla.inputs.forEach(input => {
       Object.defineProperty(this.model, input.name, 
