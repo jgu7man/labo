@@ -64,19 +64,19 @@ export class SidenavService {
       id: 'pedidos',
       display: 'pedidos',
       icon: 'fa-tags',
-      link:'lista',
+      link:'pedidos',
       submenu: [
         {
           id: 'procesados',
           display: 'procesados',
           icon: 'fa-tags',
-          link:'procesados',
+          link:'',
         },
         {
           id: 'pendientes',
           display: 'pendientes',
           icon: 'fa-user-tag',
-          link:'pendientes',
+          link:'',
         },
       ]
     },

@@ -41,10 +41,12 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    const pwd = await this.cryptPwd(this.user.Contrasena)
-    this.user.Contrasena = pwd
+    // const pwd = await this.cryptPwd(this.user.Contrasena)
+    // this.user.Contrasena = pwd
+    console.log(this.user)
 
     this._auth.AutenticarUsuario(this.user).subscribe(res => {
+      sessionStorage.setItem('labolog', JSON.stringify(res))
       this.router.navigate(['../'])
     }, (error) => {
         $(".error").slideToggle()

@@ -33,8 +33,11 @@ export class MxEditFormComponent implements OnInit {
     this.tabla = await this._entidades.getCurrentEntity(this.currentTabla)
     this.doc = await this._entidades.getOneDoc(this.currentTabla, this.currentDoc)
     this.tableName = this.tabla.singleName
+    console.log(this.doc)
     this.tabla.inputs.forEach(input => {
+      console.log(input)
       var field = this.doc.find(field => field.key === input.name)
+      console.log(field)
       input.value = field.value
     })
   }

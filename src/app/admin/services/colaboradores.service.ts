@@ -20,7 +20,7 @@ export class ColaboradoresService {
     inputs: [
       {
         name: 'UsuarioID',
-        display: 'UsuarioID',
+        display: '',
         inputType: 'hidden',
         value:1,
         visible: true    

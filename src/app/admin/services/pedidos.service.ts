@@ -29,7 +29,7 @@ export class PedidosService {
     inputs: [
       {
         name: 'IdCliente',
-        display: 'idCliente',
+        display: '',
         inputType: 'hidden',
         value: 1,
         visible: false

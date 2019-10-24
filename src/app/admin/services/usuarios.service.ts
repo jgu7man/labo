@@ -16,7 +16,7 @@ export class UsuariosService {
     inputs: [
           {
             name: 'UsuarioID',
-            display: 'UsuarioID',
+            display: '',
             inputType: 'hidden',
             value:1,
             visible: false

@@ -27,9 +27,9 @@ export class ServiciosService {
     inputs: [
       {
         name: 'IdServicio',
-        display: 'Id',
-        inputType: 'number',
-        value:0,
+        display: '',
+        inputType: 'hidden',
+        value:'',
         visible: true
       },
       {
