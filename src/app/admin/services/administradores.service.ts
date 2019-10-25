@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class AdministradorService {
 
   constructor() { }
   public roles = [1, 2]
 
 
-  public UsuariosEntity = {
-    tag: 'usuarios',
-    tableName: 'usuarios',
-    singleName: 'usuario',
+  public AdministradorEntity = {
+    tag: 'administradores',
+    tableName: 'administradores',
+    singleName: 'administrador',
     inputs: [
           {
             name: 'UsuarioID',
@@ -81,7 +81,7 @@ export class UsuariosService {
             name: 'Rol',
             display: '',
             inputType: 'hidden',
-            value: 1,
+            value: 3,
             visible: false
           },
         ]

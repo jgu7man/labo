@@ -1,15 +1,16 @@
 import { Injectable } from "@angular/core";
+import { HttpApi } from "../models/http.model";
+import { Observable } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import { ColaboradoresService } from './colaboradores.service';
 import { UsuariosService } from './usuarios.service';
 import { CategoriasService } from './categorias.service';
 import { ServiciosService } from './servicios.service';
 import { DATAService } from './DATA.service';
-import { HttpApi } from "../models/http.model";
-import { Observable } from 'rxjs';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { PedidosService } from './pedidos.service';
 import { UnidadMedidaService } from './unidadMedida.service';
+import { AdministradorService } from './administradores.service';
 
 @Injectable({ providedIn: 'root' })
 export class EntidadesService {
@@ -28,6 +29,7 @@ export class EntidadesService {
     private _servicios: ServiciosService,
     private _pedidos: PedidosService,
     private _unidadMedida: UnidadMedidaService,
+    private _administradores: AdministradorService
     ) {
         this.entidades.push(
           _colaboradores.ColaboradoresEntity,
@@ -35,7 +37,8 @@ export class EntidadesService {
           _categorias.CategoriasEntity,
           _servicios.ServiciosEntity,
           _pedidos.PedidosEntity,
-          _unidadMedida.unidadMedidaEntity
+          _unidadMedida.unidadMedidaEntity,
+          _administradores.AdministradorEntity
         )
     }
 

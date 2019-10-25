@@ -17,15 +17,15 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private _auth: AuthService
   ) {
-    this.user = new LoginModel(1,'','');
+    this.user = new LoginModel(2,'','');
    }
 
   ngOnInit() {
-    // var u = JSON.parse(localStorage.getItem('lasmotosSes'))
-    // if (u != null || u != undefined) {
-    //   this.router.navigate(['/admin'])
-    //   console.log("el Admin ya inicio sesión")
-    // }
+    var u = JSON.parse(sessionStorage.getItem('labolog'))
+    if (u != null || u != undefined) {
+      this.router.navigate(['/panel'])
+      console.log("el Admin ya inicio sesión")
+    }
   }
 
   cryptPwd(pwd) {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
     this._auth.AutenticarUsuario(this.user).subscribe(res => {
       sessionStorage.setItem('labolog', JSON.stringify(res))
-      this.router.navigate(['../'])
+      this.router.navigate(['/panel'])
     }, (error) => {
         $(".error").slideToggle()
       this.error = error.error.error

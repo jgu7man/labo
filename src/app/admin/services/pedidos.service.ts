@@ -112,6 +112,13 @@ export class PedidosService {
         visible: false
       },
       {
+        name: 'Total',
+        display: 'Total',
+        inputType: 'text',
+        value: '',
+        visible: false
+      },
+      {
         name: 'Detalle_Orden',
         display: 'Detalle de Orden',
         inputType: 'popup',

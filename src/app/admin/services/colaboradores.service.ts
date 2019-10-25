@@ -97,9 +97,9 @@ export class ColaboradoresService {
       },
       {
         name: 'Rol',
-        display: 'Rol',
-        inputType: 'select',
-        value:this.roles,
+        display: '',
+        inputType: 'hidden',
+        value:2,
         visible: false
       },
     ]

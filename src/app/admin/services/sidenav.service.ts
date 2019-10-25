@@ -80,5 +80,19 @@ export class SidenavService {
         },
       ]
     },
+    {
+      id: 'configuración',
+      display: 'configuración',
+      icon: 'fa-cog',
+      link:'lista',
+      submenu: [
+        {
+          id: 'administradores',
+          display: 'administradores',
+          icon: 'fa-user-tie',
+          link:'administradores',
+        },
+      ]
+    },
   ]
 }
