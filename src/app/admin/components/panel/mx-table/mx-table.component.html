@@ -13,7 +13,7 @@
             <tr *ngFor="let fila of DATA; index as i">
                 <td *ngFor="let col of fila">
                     <div class="img" *ngIf="col.key.includes('Imagen'); else noImg">
-                        <img [src]=col.value alt="">
+                        <img [src]="'https://zaisor.com/labo_api/imagen/'+currentTabla+'/'+col.value" alt="">
                     </div>
                     <ng-template #noImg>
                         <span>{{col.value}}</span>

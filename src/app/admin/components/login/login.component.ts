@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
     this._auth.AutenticarUsuario(this.user).subscribe(res => {
       sessionStorage.setItem('labolog', JSON.stringify(res))
-      this.router.navigate(['/panel'])
+      this.router.navigate(['/admin/panel'])
     }, (error) => {
         $(".error").slideToggle()
       this.error = error.error.error

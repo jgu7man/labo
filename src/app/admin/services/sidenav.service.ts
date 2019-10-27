@@ -51,13 +51,7 @@ export class SidenavService {
           display: 'categorías',
           icon: 'fa-boxes',
           link:'categorias',
-        },
-        {
-          id: 'unidadmedida',
-          display: 'Unidad de medida',
-          icon: 'fa-balance-scale',
-          link:'unidadmedida',
-        },
+        }
       ]
     },
     {
@@ -91,6 +85,12 @@ export class SidenavService {
           display: 'administradores',
           icon: 'fa-user-tie',
           link:'administradores',
+        },
+        {
+          id: 'unidadmedida',
+          display: 'Unidad de medida',
+          icon: 'fa-balance-scale',
+          link:'unidadmedida',
         },
       ]
     },
