@@ -21,6 +21,11 @@ export class PedidosService {
     return this._http.get(HttpApi+`${currentTabla}/mostrar`, {headers: headers})
   }
 
+  getServiciosByCategoria(id): Observable<any> {
+    var headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this._http.get(HttpApi+`servicios/mostrarid?id=${id}`, {headers: headers})
+  }
+
 
   public PedidosEntity = {
     tag: 'pedidos',

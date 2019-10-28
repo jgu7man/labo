@@ -10,14 +10,14 @@
             <div *ngFor="let item of inputs; let id = index; trackBy: trackByFn">
                 <div class="col s12 input-field" *ngIf="item.inputType != 'select' && item.inputType != 'file'; else selectInput">
 
-                    <input type="{{item.inputType}}" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                    <input required type="{{item.inputType}}" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
                     <label for="{{item.name}}">{{item.display}}</label>
                 </div>
 
                 <ng-template #selectInput>
                     <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
                         <label for="{{item.name}}">{{item.display}}</label>
-                        <select #select (change)="selected($event)" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.name">
+                        <select required #select (change)="selected($event)" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.name">
                             <option *ngFor="let option of item.value | keyvalue"
                                 [value]=option.value>
                                 {{option.value}}
@@ -29,10 +29,10 @@
                     <div class="col s12 file-field file-input">
                         <div class="btn primary">
                             <span>{{item.display}}</span>
-                            <input type="file" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.value">
+                            <input required type="file" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.value">
                         </div>
                         <div class="file-path-wrapper">
-                            <input type="text" class="file-path validate">
+                            <input required type="text" class="file-path validate">
                         </div>
                     </div>
                 </ng-template>
@@ -43,7 +43,7 @@
             <div *ngFor="let item of inputsOpcionales; let id = index; trackBy: trackByFn">
                 <div class="col s12 input-field" *ngIf="item.turnOpciones; else inputs" (click)="turnOpciones(item.name)">
                     <p>
-                        <input type="checkbox" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                        <input required type="checkbox" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
                         <label for="{{item.name}}">{{item.display}}</label>
                     </p>
 
@@ -51,7 +51,7 @@
                 <ng-template #inputs>
                     <div class="opcionales">
                         <div class="col s12 input-field" *ngIf="item.inputType != 'select' && item.inputType != 'file'; else selectInput">
-                            <input type="{{item.inputType}}" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
+                            <input required type="{{item.inputType}}" #{{item.name}}="ngModel" id="{{item.name}}" name="{{item.name}}" [(ngModel)]="item.value">
                             <label for="{{item.name}}">{{item.display}}</label>
                         </div>
 
@@ -59,7 +59,7 @@
                         <ng-template #selectInput>
                             <div class="col s12" *ngIf="item.inputType === 'select'; else fileInput">
                                 <label for="{{item.name}}">{{item.display}}</label>
-                                <select #select [name]="item.name" [id]="item.name" [(ngModel)]="item.value">
+                                <select required #select [name]="item.name" [id]="item.name" [(ngModel)]="item.value">
                                     <option *ngFor="let option of item.value | keyvalue"
                                         value="{{option.value}}">
                                         {{option.value}}
@@ -71,10 +71,10 @@
                             <div class="col s12 file-field file-input">
                                 <div class="btn primary">
                                     <span>{{item.display}}</span>
-                                    <input type="file" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.value">
+                                    <input required type="file" name="{{item.name}}" id="{{item.name}}" [(ngModel)]="item.value">
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input type="text" class="file-path validate">
+                                    <input required type="text" class="file-path validate">
                                 </div>
                             </div>
                         </ng-template>
@@ -84,7 +84,7 @@
 
 
             <div class="col s12 center">
-                <button class="btn primary">AGREGAR</button>
+                <button class="btn primary" [disabled]="!addForm.form.valid">AGREGAR</button>
             </div>
         </form>
     </div>
