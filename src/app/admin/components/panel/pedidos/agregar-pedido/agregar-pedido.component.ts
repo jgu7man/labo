@@ -24,7 +24,7 @@ export class AgregarPedidoComponent implements OnInit {
     private _location: Location,
     private _entidades: EntidadesService
   ) {
-    this.pedido = new PedidosModel(1, '', '', '', '', '', '', '', 0, 0, 0, [])
+    this.pedido = new PedidosModel(1, '', '', '', '', '', '', '', 0, 0, 0, [], '')
     this.detalle = new DetalleOrdenModel(0, 0, 0, 0, 0)
     this._entidades.getData('categorias').subscribe(res => {
       this.categorias = res

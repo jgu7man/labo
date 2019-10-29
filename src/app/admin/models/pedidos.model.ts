@@ -12,6 +12,7 @@ export class PedidosModel{
         public Longitud_Cliente: number,
         public Ref_Pago_Tarjeta: number,
         public Detalle_Orden: object[],
+        public Total: string
     ) { }
     
 }
